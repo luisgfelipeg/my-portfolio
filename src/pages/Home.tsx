@@ -26,12 +26,22 @@ export const Home = () => {
           <img className='w-52 me' src={Me} alt='Minha foto' />
         </div>
         <div className='flex justify-center items-center flex-col gap-4 text-sky-300 absolute left-72 bottom-96 after:w-[1px] after:h-10 after:bg-sky-300'>
-          <button className='duration-300 hover:text-white'>
+          <a
+            href='https://br.linkedin.com/in/luis-felipe-gongora-garcia'
+            target='_blank'
+            rel='noreferrer'
+            className='duration-300 hover:text-white'
+          >
             <SiLinkedin />
-          </button>
-          <button className='duration-300 hover:text-white'>
+          </a>
+          <a
+            href='https://github.com/luisgfelipeg'
+            target='_blank'
+            rel='noreferrer'
+            className='duration-300 hover:text-white'
+          >
             <AiFillGithub />
-          </button>
+          </a>
         </div>
       </div>
     </LayoutBase>
