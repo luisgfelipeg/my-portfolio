@@ -1,5 +1,15 @@
+import { BrowserRouter } from 'react-router-dom';
+import { AppRoutes } from './routes';
+import { Footer, Navbar } from './shared/components';
+
 function App() {
-  return <h1>Hello World</h1>;
+  return (
+    <BrowserRouter>
+      <Navbar logo='LF' menu={[{ menuItem: 'Página Inicial', menuLink: '/' }]}>
+        <AppRoutes />
+      </Navbar>
+    </BrowserRouter>
+  );
 }
 
 export default App;
