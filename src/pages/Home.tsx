@@ -1,10 +1,11 @@
-import { AiFillGithub } from 'react-icons/ai';
+import { Link } from 'react-router-dom';
 import { SiLinkedin } from 'react-icons/si';
+import { AiFillGithub } from 'react-icons/ai';
 
 import Me from '../shared/assets/images/me.png';
 import { LayoutBase } from '../shared/components';
 import CV from '../shared/assets/archives/cvLuis.pdf';
-import { Link } from 'react-router-dom';
+import MeAbout from '../shared/assets/images/meAbout.jpg';
 
 export const Home = () => {
   return (
@@ -42,6 +43,29 @@ export const Home = () => {
           >
             <AiFillGithub />
           </a>
+        </div>
+        <div className='flex justify-center flex-col items-center mt-52'>
+          <h5 className='text-gray-400 font-bold text-sm'>Um pouco</h5>
+          <h1 className='text-4xl font-bold text-sky-300'>Sobre mim!</h1>
+          <div className='mt-20 flex justify-center gap-48'>
+            <img
+              className='w-96 rounded-3xl ring-8'
+              src={MeAbout}
+              alt='Minha foto'
+            />
+            <div className='w-2/5'>
+              <p className='text-gray-400 text-xl'>
+                Tenho 25 anos, sempre fui apaixonado por tecnologia, e decidi
+                seguir nessa área que sempre fez parte de alguma forma na minha
+                vida, desde então tenho me aprofundado cada vez mais em
+                programação. Atualmente estou cursando Análise e Desenvolvimento
+                de Sistemas. Fiz esse Portfólio pra mostrar o que já sou capaz
+                de desenvolver, e estou em busca de uma oportunidade
+                profissional com disposição a me propor novos desafios visando
+                meu desenvolvimento e o da empresa onde atuar.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </LayoutBase>

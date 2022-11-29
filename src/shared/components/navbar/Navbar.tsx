@@ -19,7 +19,7 @@ export const Navbar = ({ children, menu, logo }: NavbarProps) => {
 
   return (
     <>
-      <nav className='w-full sticky top-0 left-0 shadow-md bg-sky-300'>
+      <nav className='w-full sticky top-0 left-0 shadow-md bg-sky-300 z-50'>
         <div className='lg:flex lg:px-10 items-center justify-between py-4 px-7'>
           <div
             id='logo'
