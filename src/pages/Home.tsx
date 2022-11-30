@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { BsCheckLg } from 'react-icons/bs';
 import { SiLinkedin } from 'react-icons/si';
 import { AiFillGithub } from 'react-icons/ai';
 
@@ -64,6 +64,138 @@ export const Home = () => {
                 profissional com disposição a me propor novos desafios visando
                 meu desenvolvimento e o da empresa onde atuar.
               </p>
+            </div>
+          </div>
+          <div className='flex justify-center flex-col items-center mt-28 mb-60'>
+            <h5 className='text-gray-400 font-bold text-sm'>Minhas</h5>
+            <h1 className='text-4xl font-bold text-sky-300'>Habilidades!</h1>
+            <div className='flex flex-1 gap-40 mt-20'>
+              <div className='bg-blue-900 flex justify-center items-center flex-col p-24 rounded-3xl hover:bg-slate-900 hover:outline hover:outline-2 hover:outline-sky-300 duration-200'>
+                <h2 className='text-sky-300 text-xl font-bold'>Frontend</h2>
+                <div className='grid grid-cols-2 justify-items-center justify-center gap-32 mt-5'>
+                  <div>
+                    <div className='flex gap-2'>
+                      <BsCheckLg className='text-sky-300 mt-1' />
+                      <div>
+                        <p className='text-white font-bold text-lg'>HTML</p>
+                        <small className='text-gray-400 font-bold text-sm'>
+                          Avançado
+                        </small>
+                      </div>
+                    </div>
+                    <div className='flex gap-2 mt-8'>
+                      <BsCheckLg className='text-sky-300 mt-1' />
+                      <div>
+                        <p className='text-white font-bold text-lg'>
+                          JavaScript
+                        </p>
+                        <small className='text-gray-400 font-bold text-sm'>
+                          Avançado
+                        </small>
+                      </div>
+                    </div>
+                    <div className='flex gap-2 mt-8'>
+                      <BsCheckLg className='text-sky-300 mt-1' />
+                      <div>
+                        <p className='text-white font-bold text-lg'>CSS</p>
+                        <small className='text-gray-400 font-bold text-sm'>
+                          Avançado
+                        </small>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div className='flex gap-2'>
+                      <BsCheckLg className='text-sky-300 mt-1' />
+                      <div>
+                        <p className='text-white font-bold text-lg'>React</p>
+                        <small className='text-gray-400 font-bold text-sm'>
+                          Intermediário
+                        </small>
+                      </div>
+                    </div>
+                    <div className='flex gap-2 mt-8'>
+                      <BsCheckLg className='text-sky-300 mt-1' />
+                      <div>
+                        <p className='text-white font-bold text-lg'>
+                          TailwindCSS
+                        </p>
+                        <small className='text-gray-400 font-bold text-sm'>
+                          Intermediário
+                        </small>
+                      </div>
+                    </div>
+                    <div className='flex gap-2 mt-8'>
+                      <BsCheckLg className='text-sky-300 mt-1' />
+                      <div>
+                        <p className='text-white font-bold text-lg'>
+                          TypeScript
+                        </p>
+                        <small className='text-gray-400 font-bold text-sm'>
+                          Intermediário
+                        </small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className='bg-blue-900 flex justify-center items-center flex-col p-24 rounded-3xl hover:bg-slate-900 hover:outline hover:outline-2 hover:outline-sky-300 duration-200'>
+                <h2 className='text-sky-300 text-xl font-bold'>Backend</h2>
+                <div className='grid grid-cols-2 justify-items-center justify-center gap-32 mt-5'>
+                  <div>
+                    <div className='flex gap-2'>
+                      <BsCheckLg className='text-sky-300 mt-1' />
+                      <div>
+                        <p className='text-white font-bold text-lg'>NodeJS</p>
+                        <small className='text-gray-400 font-bold text-sm'>
+                          Intermediário
+                        </small>
+                      </div>
+                    </div>
+                    <div className='flex gap-2 mt-8'>
+                      <BsCheckLg className='text-sky-300 mt-1' />
+                      <div>
+                        <p className='text-white font-bold text-lg'>
+                          APIs RESTful
+                        </p>
+                        <small className='text-gray-400 font-bold text-sm'>
+                          Intermediário
+                        </small>
+                      </div>
+                    </div>
+                    <div className='flex gap-2 mt-8'>
+                      <BsCheckLg className='text-sky-300 mt-1' />
+                      <div>
+                        <p className='text-white font-bold text-lg'>MySQL</p>
+                        <small className='text-gray-400 font-bold text-sm'>
+                          Básico
+                        </small>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div className='flex gap-2'>
+                      <BsCheckLg className='text-sky-300 mt-1' />
+                      <div>
+                        <p className='text-white font-bold text-lg'>Firebase</p>
+                        <small className='text-gray-400 font-bold text-sm'>
+                          Intermediário
+                        </small>
+                      </div>
+                    </div>
+                    <div className='flex gap-2 mt-8'>
+                      <BsCheckLg className='text-sky-300 mt-1' />
+                      <div>
+                        <p className='text-white font-bold text-lg'>MongoDB</p>
+                        <small className='text-gray-400 font-bold text-sm'>
+                          Básico
+                        </small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
