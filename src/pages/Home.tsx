@@ -1,11 +1,13 @@
 import { BsCheckLg } from 'react-icons/bs';
 import { SiLinkedin } from 'react-icons/si';
 import { AiFillGithub } from 'react-icons/ai';
+import { MdOutlineNextWeek } from 'react-icons/md';
 
 import Me from '../shared/assets/images/me.png';
 import { LayoutBase } from '../shared/components';
 import CV from '../shared/assets/archives/cvLuis.pdf';
 import MeAbout from '../shared/assets/images/meAbout.jpg';
+import { Link } from 'react-router-dom';
 
 export const Home = () => {
   return (
@@ -66,7 +68,7 @@ export const Home = () => {
               </p>
             </div>
           </div>
-          <div className='flex justify-center flex-col items-center mt-28 mb-60'>
+          <div className='flex justify-center flex-col items-center mt-28 mb-28'>
             <h5 className='text-gray-400 font-bold text-sm'>Minhas</h5>
             <h1 className='text-4xl font-bold text-sky-300'>Habilidades!</h1>
             <div className='flex flex-1 gap-40 mt-20'>
@@ -198,6 +200,16 @@ export const Home = () => {
               </div>
             </div>
           </div>
+        </div>
+
+        <div className='mb-20 '>
+          <Link
+            className='flex justify-center items-center flex-col text-sky-300'
+            to={'/meus-projetos'}
+          >
+            <MdOutlineNextWeek className='text-6xl' />
+            <p className='text-4xl font-bold'>Meus Projetos!</p>
+          </Link>
         </div>
       </div>
     </LayoutBase>

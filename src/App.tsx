@@ -5,7 +5,13 @@ import { Footer, Navbar } from './shared/components';
 function App() {
   return (
     <BrowserRouter>
-      <Navbar logo='LF' menu={[{ menuItem: 'Página Inicial', menuLink: '/' }]}>
+      <Navbar
+        logo='LF'
+        menu={[
+          { menuItem: 'Página Inicial', menuLink: '/' },
+          { menuItem: 'Projetos', menuLink: '/meus-projetos' },
+        ]}
+      >
         <AppRoutes />
       </Navbar>
     </BrowserRouter>

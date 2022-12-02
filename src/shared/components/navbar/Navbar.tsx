@@ -52,12 +52,13 @@ export const Navbar = ({ children, menu, logo }: NavbarProps) => {
                   >
                     <Link
                       to={item.menuLink}
-                      className='rounded hover:border-solid border-2 hover:border-black duration-200 py-2 px-4'
+                      className='rounded hover:outline outline-2 hover:outline-black duration-500 py-2 px-4'
                     >
                       {item.menuItem}
                     </Link>
                   </li>
                 );
+              return <></>;
             })}
             <button className=' flex items-center bg-slate-900 text-white font-bold font-[Poppins] py-2 px-6 rounded-lg lg:ml-8 hover:bg-white hover:text-slate-900 duration-300'>
               CONTATO |
