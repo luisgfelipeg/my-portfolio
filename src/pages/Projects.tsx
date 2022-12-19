@@ -1,4 +1,4 @@
-import { LayoutBase } from '../shared/components';
+import { LayoutBase } from '../shared/layouts';
 
 export const Projects = () => {
   return (

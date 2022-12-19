@@ -4,10 +4,10 @@ import { AiFillGithub } from 'react-icons/ai';
 import { MdOutlineNextWeek } from 'react-icons/md';
 
 import Me from '../shared/assets/images/me.png';
-import { LayoutBase } from '../shared/components';
 import CV from '../shared/assets/archives/cvLuis.pdf';
 import MeAbout from '../shared/assets/images/meAbout.jpg';
 import { Link } from 'react-router-dom';
+import { LayoutBase } from '../shared/layouts';
 
 export const Home = () => {
   return (
