@@ -8,22 +8,33 @@ import { Link } from 'react-router-dom';
 export const ToDoList = () => {
   const [show, setShow] = useState(false);
   const [update, setUpdate] = useState(false);
-  const [newToDo, setNewToDo] = useState<any>({ name: '', nameToDo: '' });
+  const [newToDo, setNewToDo] = useState<any>({ date: '', nameToDo: '' });
   const [users, setUsers] = useState<any>([]);
   const [feedBack, setFeedBack] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
   const hiddenModal = () => {
     setShow(false);
-    setNewToDo({ name: '', nameToDo: '' });
+    setNewToDo({ date: '', nameToDo: '' });
   };
 
+  function formatedDate() {
+    const date = new Date();
+    const day = date.getDate().toString();
+    const dayF = day.length == 1 ? '0' + day : day;
+    const month = (date.getMonth() + 1).toString();
+    const monthF = month.length == 1 ? '0' + month : month;
+    const yearF = date.getFullYear();
+    return dayF + '/' + monthF + '/' + yearF;
+  }
+
   function addNewToDo() {
-    users.push({ name: newToDo.name, nameToDo: newToDo.nameToDo });
+    users.push({ date: formatedDate(), nameToDo: [newToDo.nameToDo] });
     localStorage.setItem('users', JSON.stringify(users));
     const user = localStorage.getItem('users');
     if (user) {
-      console.log(JSON.parse(user));
+      const test = JSON.parse(user);
+      console.log(test);
     }
     hiddenModal();
   }
@@ -31,6 +42,8 @@ export const ToDoList = () => {
   useEffect(() => {
     const users = localStorage.getItem('users');
     if (users) {
+      const test = JSON.parse(users);
+      console.log(test);
       setUsers(JSON.parse(users));
     }
   }, []);
@@ -61,22 +74,22 @@ export const ToDoList = () => {
             </button>
           </div>
           <Table
-            titleColumn1='Criado Por:'
+            titleColumn1='Data'
             titleColumn2='Nome da Lista'
             titleColumn3='Ações'
           >
             {users.map((user: any) => {
               return (
                 <tr
-                  key={user.name}
+                  key={user.nameToDo}
                   className='border-solid border-b border-neutral-300'
                 >
                   <td className='py-3 max-sm:py-2'>
                     <Link
-                      to={`/meus-projetos/to-do-list/${user.name}`}
+                      to={`/meus-projetos/to-do-list/${user.date}`}
                       className='cursor-pointer'
                     >
-                      {user.name}
+                      {user.date}
                     </Link>
                   </td>
                   <td className='py-3 max-sm:py-2'>

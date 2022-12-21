@@ -32,15 +32,6 @@ export const Modal = ({
       <Input
         type='text'
         className='w-1/4'
-        placeholder='Quem é voce?'
-        value={newToDo.name}
-        onChange={(e) => {
-          setNewToDo((prev: any) => ({ ...prev, name: e.target.value }));
-        }}
-      />
-      <Input
-        type='text'
-        className='w-1/4'
         placeholder='Nome da Lista'
         value={newToDo.nameToDo}
         onChange={(e) => {
