@@ -6,7 +6,9 @@ interface ModalProps {
   hiddenModal: () => void;
   addNewToDo: () => void;
   setNewToDo: (prev: Object) => void;
-  newToDo: { name: string; nameToDo: string };
+  newToDo: { newToDo: string };
+  iNameToDo: string;
+  list?: boolean;
 }
 
 export const Modal = ({
@@ -15,6 +17,8 @@ export const Modal = ({
   setNewToDo,
   addNewToDo,
   newToDo,
+  iNameToDo,
+  list,
 }: ModalProps) => {
   return (
     <div
@@ -32,10 +36,15 @@ export const Modal = ({
       <Input
         type='text'
         className='w-1/4'
-        placeholder='Nome da Lista'
-        value={newToDo.nameToDo}
+        placeholder={iNameToDo}
+        value={newToDo.newToDo}
         onChange={(e) => {
-          setNewToDo((prev: Object) => ({ ...prev, nameToDo: e.target.value }));
+          list
+            ? setNewToDo((prev: Object) => ({ ...prev, toDo: e.target.value }))
+            : setNewToDo((prev: Object) => ({
+                ...prev,
+                nameToDo: e.target.value,
+              }));
         }}
       />
       <Button onClick={() => addNewToDo()}>ADD</Button>

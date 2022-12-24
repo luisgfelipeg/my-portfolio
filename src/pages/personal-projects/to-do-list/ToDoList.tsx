@@ -1,21 +1,21 @@
 import { useEffect, useState } from 'react';
-import { ActionsList, Modal, Table } from '../../shared/components';
+import { ActionsList, Modal, Table } from '../../../shared/components';
 import { IoIosAddCircleOutline } from 'react-icons/io';
-import { LayoutBase } from '../../shared/layouts';
+import { LayoutBase } from '../../../shared/layouts';
 import { ToastContainer } from 'react-toastify';
 import { Link } from 'react-router-dom';
 
 export const ToDoList = () => {
   const [show, setShow] = useState(false);
   const [update, setUpdate] = useState(false);
-  const [newToDo, setNewToDo] = useState<any>({ date: '', nameToDo: '' });
+  const [newToDo, setNewToDo] = useState<any>({ nameToDo: '' });
   const [users, setUsers] = useState<any>([]);
   const [feedBack, setFeedBack] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
   const hiddenModal = () => {
     setShow(false);
-    setNewToDo({ date: '', nameToDo: '' });
+    setNewToDo({ date: '', nameToDo: '', toDo: [] });
   };
 
   function formatedDate() {
@@ -29,12 +29,12 @@ export const ToDoList = () => {
   }
 
   function addNewToDo() {
-    users.push({ date: formatedDate(), nameToDo: [newToDo.nameToDo] });
+    users.push({ date: formatedDate(), nameToDo: newToDo.nameToDo, toDo: [] });
     localStorage.setItem('users', JSON.stringify(users));
     const user = localStorage.getItem('users');
     if (user) {
-      const test = JSON.parse(user);
-      console.log(test);
+      const trueUser = JSON.parse(user);
+      console.log(trueUser);
     }
     hiddenModal();
   }
@@ -52,6 +52,7 @@ export const ToDoList = () => {
     <LayoutBase>
       <div className='pt-24'>
         <Modal
+          iNameToDo='Nome da Lista'
           newToDo={newToDo}
           setNewToDo={setNewToDo}
           addNewToDo={addNewToDo}
@@ -84,23 +85,14 @@ export const ToDoList = () => {
                   key={user.nameToDo}
                   className='border-solid border-b border-neutral-300'
                 >
+                  <td className='py-3 max-sm:py-2'>{user.date}</td>
                   <td className='py-3 max-sm:py-2'>
                     <Link
-                      to={`/meus-projetos/to-do-list/${user.date}`}
-                      className='cursor-pointer'
-                    >
-                      {user.date}
-                    </Link>
-                  </td>
-                  <td className='py-3 max-sm:py-2'>
-                    <a
-                      onClick={() => {
-                        console.log('teste');
-                      }}
+                      to={`/meus-projetos/to-do-list/${user.nameToDo}`}
                       className='cursor-pointer'
                     >
                       {user.nameToDo}
-                    </a>
+                    </Link>
                   </td>
                   <td className='py-3 max-sm:py-2'>{<ActionsList />}</td>
                 </tr>
