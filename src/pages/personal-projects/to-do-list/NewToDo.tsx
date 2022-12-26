@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { IoIosAddCircleOutline } from 'react-icons/io';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import { ActionsList, Modal, Table } from '../../../shared/components';
 import { LayoutBase } from '../../../shared/layouts';
@@ -9,7 +9,6 @@ export const NewToDo = () => {
   const { id } = useParams<'id'>();
 
   const [show, setShow] = useState(false);
-  const [update, setUpdate] = useState(false);
   const [newToDo, setNewToDo] = useState<any>({
     date: '',
     nameToDo: '',
@@ -19,7 +18,8 @@ export const NewToDo = () => {
 
   function addNewToDo() {
     users.map((name: any) => {
-      if (name.nameToDo === id) name.toDo.push([newToDo.toDo]);
+      if (name.nameToDo === id) return name.toDo.push(newToDo.toDo);
+      return undefined;
     });
     localStorage.setItem('users', JSON.stringify(users));
     const user = localStorage.getItem('users');
@@ -65,6 +65,7 @@ export const NewToDo = () => {
                   Lista de Tarefas:{' '}
                   {users.map((name: any) => {
                     if (name.nameToDo === id) return name.nameToDo;
+                    return undefined;
                   })}
                 </h1>
               }
@@ -78,26 +79,21 @@ export const NewToDo = () => {
               <IoIosAddCircleOutline />
             </button>
           </div>
-          <Table
-            titleColumn1='Data'
-            titleColumn2='Tarefas'
-            titleColumn3='Ações'
-          >
+          <Table titleColumn1='Tarefas' titleColumn2='Ações'>
             {users.map((user: any) => {
-              return (
-                <tr
-                  key={user.nameToDo}
-                  className='border-solid border-b border-neutral-300'
-                >
-                  <td className='py-3 max-sm:py-2'>{user.date}</td>
-                  <td className='py-3 max-sm:py-2'>
-                    {user.toDo.map((task: any) => {
-                      return <td className='py-3 max-sm:py-2'>{task}</td>;
-                    })}
-                  </td>
-                  <td className='py-3 max-sm:py-2'>{<ActionsList />}</td>
-                </tr>
-              );
+              if (user.nameToDo === id)
+                return user.toDo.map((task: any) => {
+                  return (
+                    <tr
+                      key={user.nameToDo}
+                      className='border-solid border-b border-neutral-300'
+                    >
+                      <td className='py-3 max-sm:py-2'>{task}</td>
+                      <td className='py-3 max-sm:py-2'>{<ActionsList />}</td>
+                    </tr>
+                  );
+                });
+              return undefined;
             })}
           </Table>
           <ToastContainer style={{ top: '50px' }} />

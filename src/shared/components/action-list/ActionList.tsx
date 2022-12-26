@@ -1,9 +1,14 @@
-import { RiCheckboxFill } from 'react-icons/ri';
+import { RiCheckboxBlankLine, RiCheckboxFill } from 'react-icons/ri';
 import { CiEdit } from 'react-icons/ci';
 import { MdDeleteForever } from 'react-icons/md';
 import { useNavigate } from 'react-router-dom';
 
-export const ActionsList = ({}) => {
+interface ActionListProps {
+  done?: () => void;
+  complete?: boolean;
+}
+
+export const ActionsList = ({ done, complete }: ActionListProps) => {
   const navigate = useNavigate();
 
   return (
@@ -11,8 +16,8 @@ export const ActionsList = ({}) => {
       <button onClick={() => navigate(`/edicao/`)}>
         <CiEdit />
       </button>
-      <button>
-        <RiCheckboxFill />
+      <button onClick={() => done!()}>
+        {complete ? <RiCheckboxFill /> : <RiCheckboxBlankLine />}
       </button>
       <button>
         <MdDeleteForever />

@@ -6,7 +6,7 @@ interface ModalProps {
   hiddenModal: () => void;
   addNewToDo: () => void;
   setNewToDo: (prev: Object) => void;
-  newToDo: { newToDo: string };
+  newToDo: { nameToDo: string; toDo: string };
   iNameToDo: string;
   list?: boolean;
 }
@@ -33,20 +33,41 @@ export const Modal = ({
         }
       }}
     >
-      <Input
-        type='text'
-        className='w-1/4'
-        placeholder={iNameToDo}
-        value={newToDo.newToDo}
-        onChange={(e) => {
-          list
-            ? setNewToDo((prev: Object) => ({ ...prev, toDo: e.target.value }))
-            : setNewToDo((prev: Object) => ({
+      {list ? (
+        <Input
+          type='text'
+          className='w-1/4'
+          placeholder='Tarefa'
+          value={newToDo.toDo}
+          onChange={(e) =>
+            setNewToDo((prev: Object) => ({ ...prev, toDo: e.target.value }))
+          }
+        />
+      ) : (
+        <>
+          <Input
+            type='text'
+            className='w-1/4'
+            placeholder={iNameToDo}
+            value={newToDo.nameToDo}
+            onChange={(e) =>
+              setNewToDo((prev: Object) => ({
                 ...prev,
                 nameToDo: e.target.value,
-              }));
-        }}
-      />
+              }))
+            }
+          />
+          <Input
+            type='text'
+            className='w-1/4'
+            placeholder='Primeira Tarefa'
+            value={newToDo.toDo}
+            onChange={(e) =>
+              setNewToDo((prev: Object) => ({ ...prev, toDo: e.target.value }))
+            }
+          />
+        </>
+      )}
       <Button onClick={() => addNewToDo()}>ADD</Button>
     </div>
   );

@@ -7,46 +7,61 @@ import { Link } from 'react-router-dom';
 
 export const ToDoList = () => {
   const [show, setShow] = useState(false);
-  const [update, setUpdate] = useState(false);
-  const [newToDo, setNewToDo] = useState<any>({ nameToDo: '' });
+  const [newToDo, setNewToDo] = useState<any>({
+    nameToDo: '',
+    toDo: '',
+    id: 0,
+    done: false,
+  });
   const [users, setUsers] = useState<any>([]);
-  const [feedBack, setFeedBack] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
+  const [id, setId] = useState<number>(0);
+  const [update, setUpdate] = useState<boolean>(false);
 
   const hiddenModal = () => {
     setShow(false);
-    setNewToDo({ date: '', nameToDo: '', toDo: [] });
+    setNewToDo({ date: '', nameToDo: '', toDo: [''] });
   };
 
   function formatedDate() {
     const date = new Date();
     const day = date.getDate().toString();
-    const dayF = day.length == 1 ? '0' + day : day;
+    const dayF = day.length === 1 ? '0' + day : day;
     const month = (date.getMonth() + 1).toString();
-    const monthF = month.length == 1 ? '0' + month : month;
+    const monthF = month.length === 1 ? '0' + month : month;
     const yearF = date.getFullYear();
     return dayF + '/' + monthF + '/' + yearF;
   }
 
   function addNewToDo() {
-    users.push({ date: formatedDate(), nameToDo: newToDo.nameToDo, toDo: [] });
+    setId((prev: number) => prev + 1);
+    users.push({
+      date: formatedDate(),
+      nameToDo: newToDo.nameToDo,
+      toDo: [newToDo.toDo],
+      id: id,
+      done: false,
+    });
     localStorage.setItem('users', JSON.stringify(users));
-    const user = localStorage.getItem('users');
-    if (user) {
-      const trueUser = JSON.parse(user);
-      console.log(trueUser);
-    }
     hiddenModal();
   }
 
-  useEffect(() => {
-    const users = localStorage.getItem('users');
-    if (users) {
-      const test = JSON.parse(users);
-      console.log(test);
-      setUsers(JSON.parse(users));
+  function done(user: any) {
+    const wich = users.indexOf(user);
+    if (users[wich].done === false) {
+      users[wich].done = true;
+    } else {
+      users[wich].done = false;
     }
-  }, []);
+    localStorage.setItem('users', JSON.stringify(users));
+    setUpdate((prev: boolean) => !prev);
+  }
+
+  useEffect(() => {
+    const existsUsers = localStorage.getItem('users');
+    if (existsUsers) {
+      setUsers(JSON.parse(existsUsers));
+    }
+  }, [update]);
 
   return (
     <LayoutBase>
@@ -59,7 +74,7 @@ export const ToDoList = () => {
           show={show}
           hiddenModal={hiddenModal}
         />
-        <div className={`flex flex-col ${isLoading && 'items-center'}`}>
+        <div className={`flex flex-col`}>
           <div className='flex justify-between items-center mx-20 py-3 max-sm:mx-5'>
             <h1>{null}</h1>
             <strong className='text-2xl max-sm:text-xl text-white'>
@@ -82,11 +97,21 @@ export const ToDoList = () => {
             {users.map((user: any) => {
               return (
                 <tr
-                  key={user.nameToDo}
+                  key={user.id}
                   className='border-solid border-b border-neutral-300'
                 >
-                  <td className='py-3 max-sm:py-2'>{user.date}</td>
-                  <td className='py-3 max-sm:py-2'>
+                  <td
+                    className={`py-3 max-sm:py-2 ${
+                      user.done && 'line-through'
+                    }`}
+                  >
+                    {user.date}
+                  </td>
+                  <td
+                    className={`py-3 max-sm:py-2 ${
+                      user.done && 'line-through'
+                    }`}
+                  >
                     <Link
                       to={`/meus-projetos/to-do-list/${user.nameToDo}`}
                       className='cursor-pointer'
@@ -94,7 +119,14 @@ export const ToDoList = () => {
                       {user.nameToDo}
                     </Link>
                   </td>
-                  <td className='py-3 max-sm:py-2'>{<ActionsList />}</td>
+                  <td className='py-3 max-sm:py-2'>
+                    {
+                      <ActionsList
+                        done={() => done(user)}
+                        complete={user.done}
+                      />
+                    }
+                  </td>
                 </tr>
               );
             })}
