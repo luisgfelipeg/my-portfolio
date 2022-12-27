@@ -3,9 +3,11 @@ import { ActionsList, Modal, Table } from '../../../shared/components';
 import { IoIosAddCircleOutline } from 'react-icons/io';
 import { LayoutBase } from '../../../shared/layouts';
 import { ToastContainer } from 'react-toastify';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export const ToDoList = () => {
+  const navigate = useNavigate();
+
   const [show, setShow] = useState(false);
   const [newToDo, setNewToDo] = useState<any>({
     nameToDo: '',
@@ -14,7 +16,6 @@ export const ToDoList = () => {
     done: false,
   });
   const [users, setUsers] = useState<any>([]);
-  const [id, setId] = useState<number>(0);
   const [update, setUpdate] = useState<boolean>(false);
 
   const hiddenModal = () => {
@@ -33,16 +34,16 @@ export const ToDoList = () => {
   }
 
   function addNewToDo() {
-    setId((prev: number) => prev + 1);
     users.push({
       date: formatedDate(),
       nameToDo: newToDo.nameToDo,
-      toDo: [newToDo.toDo],
-      id: id,
+      toDo: [{ task: newToDo.toDo, done: false }],
+      id: Math.floor(Math.random() * 65536),
       done: false,
     });
     localStorage.setItem('users', JSON.stringify(users));
     hiddenModal();
+    navigate(`/meus-projetos/to-do-list/${newToDo.nameToDo}`);
   }
 
   function done(user: any) {

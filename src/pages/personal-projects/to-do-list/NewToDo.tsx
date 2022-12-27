@@ -1,32 +1,30 @@
 import { useEffect, useState } from 'react';
 import { IoIosAddCircleOutline } from 'react-icons/io';
-import { useParams } from 'react-router-dom';
+import { IoArrowBackCircleOutline } from 'react-icons/io5';
+import { useNavigate, useParams } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import { ActionsList, Modal, Table } from '../../../shared/components';
 import { LayoutBase } from '../../../shared/layouts';
 
 export const NewToDo = () => {
-  const { id } = useParams<'id'>();
+  const navigate = useNavigate();
 
+  const { id } = useParams<'id'>();
   const [show, setShow] = useState(false);
   const [newToDo, setNewToDo] = useState<any>({
-    date: '',
     nameToDo: '',
     toDo: [],
   });
   const [users, setUsers] = useState<any>([]);
+  const [update, setUpdate] = useState<boolean>(false);
 
   function addNewToDo() {
     users.map((name: any) => {
-      if (name.nameToDo === id) return name.toDo.push(newToDo.toDo);
+      if (name.nameToDo === id)
+        return name.toDo.push({ task: newToDo.toDo, done: false });
       return undefined;
     });
     localStorage.setItem('users', JSON.stringify(users));
-    const user = localStorage.getItem('users');
-    if (user) {
-      const test = JSON.parse(user);
-      console.log(test);
-    }
     hiddenModal();
   }
 
@@ -35,14 +33,24 @@ export const NewToDo = () => {
     setNewToDo({ date: '', nameToDo: '', toDo: [] });
   };
 
+  function done(user: any, n: any) {
+    const wichUser = users.indexOf(user);
+    const wichTask = users[wichUser].toDo.indexOf(n);
+    if (n.done === false) {
+      users[wichUser].toDo[wichTask].done = true;
+    } else {
+      users[wichUser].toDo[wichTask].done = false;
+    }
+    localStorage.setItem('users', JSON.stringify(users));
+    setUpdate((prev: boolean) => !prev);
+  }
+
   useEffect(() => {
     const users = localStorage.getItem('users');
     if (users) {
-      const test = JSON.parse(users);
-      console.log(test);
       setUsers(JSON.parse(users));
     }
-  }, []);
+  }, [update]);
 
   return (
     <LayoutBase>
@@ -58,7 +66,14 @@ export const NewToDo = () => {
         />
         <div className={`flex flex-col`}>
           <div className='flex justify-between items-center mx-20 py-3 max-sm:mx-5'>
-            <h1>{null}</h1>
+            <button
+              onClick={() => {
+                navigate('/meus-projetos/to-do-list');
+              }}
+              className='text-blue-500 text-5xl'
+            >
+              <IoArrowBackCircleOutline />
+            </button>
             <strong className='text-2xl max-sm:text-xl text-white'>
               {
                 <h1>
@@ -85,11 +100,24 @@ export const NewToDo = () => {
                 return user.toDo.map((task: any) => {
                   return (
                     <tr
-                      key={user.nameToDo}
+                      key={Math.floor(Math.random() * 65536)}
                       className='border-solid border-b border-neutral-300'
                     >
-                      <td className='py-3 max-sm:py-2'>{task}</td>
-                      <td className='py-3 max-sm:py-2'>{<ActionsList />}</td>
+                      <td
+                        className={`py-3 max-sm:py-2 ${
+                          task.done && 'line-through'
+                        }`}
+                      >
+                        {task.task}
+                      </td>
+                      <td className='py-3 max-sm:py-2'>
+                        {
+                          <ActionsList
+                            done={() => done(user, task)}
+                            complete={task.done}
+                          />
+                        }
+                      </td>
                     </tr>
                   );
                 });
