@@ -47,12 +47,19 @@ export const ToDoList = () => {
   }
 
   function done(user: any) {
-    const wich = users.indexOf(user);
-    if (users[wich].done === false) {
-      users[wich].done = true;
+    const wichUser = users.indexOf(user);
+    if (users[wichUser].done === false) {
+      users[wichUser].done = true;
     } else {
-      users[wich].done = false;
+      users[wichUser].done = false;
     }
+    localStorage.setItem('users', JSON.stringify(users));
+    setUpdate((prev: boolean) => !prev);
+  }
+
+  function removeToDo(user: any) {
+    const wichUser = users.indexOf(user);
+    users.splice(wichUser, 1);
     localStorage.setItem('users', JSON.stringify(users));
     setUpdate((prev: boolean) => !prev);
   }
@@ -125,6 +132,7 @@ export const ToDoList = () => {
                       <ActionsList
                         done={() => done(user)}
                         complete={user.done}
+                        removeToDo={() => removeToDo(user)}
                       />
                     }
                   </td>

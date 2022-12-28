@@ -6,9 +6,14 @@ import { useNavigate } from 'react-router-dom';
 interface ActionListProps {
   done?: () => void;
   complete?: boolean;
+  removeToDo?: () => void;
 }
 
-export const ActionsList = ({ done, complete }: ActionListProps) => {
+export const ActionsList = ({
+  done,
+  complete,
+  removeToDo,
+}: ActionListProps) => {
   const navigate = useNavigate();
 
   return (
@@ -19,7 +24,7 @@ export const ActionsList = ({ done, complete }: ActionListProps) => {
       <button onClick={() => done!()}>
         {complete ? <RiCheckboxFill /> : <RiCheckboxBlankLine />}
       </button>
-      <button>
+      <button onClick={() => removeToDo!()}>
         <MdDeleteForever />
       </button>
     </div>

@@ -45,6 +45,14 @@ export const NewToDo = () => {
     setUpdate((prev: boolean) => !prev);
   }
 
+  function removeToDo(user: any, n: any) {
+    const wichUser = users.indexOf(user);
+    const wichTask = users[wichUser].toDo.indexOf(n);
+    users[wichUser].toDo.splice(wichTask, 1);
+    localStorage.setItem('users', JSON.stringify(users));
+    setUpdate((prev: boolean) => !prev);
+  }
+
   useEffect(() => {
     const users = localStorage.getItem('users');
     if (users) {
@@ -115,6 +123,7 @@ export const NewToDo = () => {
                           <ActionsList
                             done={() => done(user, task)}
                             complete={task.done}
+                            removeToDo={() => removeToDo(user, task)}
                           />
                         }
                       </td>
