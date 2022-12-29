@@ -2,7 +2,7 @@ import React from 'react';
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   errorInput?: boolean | undefined;
-  className: string | undefined;
+  className?: string | undefined;
 }
 
 export const Input = ({ className, errorInput, ...rest }: InputProps) => {

@@ -133,6 +133,11 @@ export const ToDoList = () => {
                         done={() => done(user)}
                         complete={user.done}
                         removeToDo={() => removeToDo(user)}
+                        edit={() =>
+                          navigate(
+                            `/meus-projetos/to-do-list/edit/${user.nameToDo}`
+                          )
+                        }
                       />
                     }
                   </td>
