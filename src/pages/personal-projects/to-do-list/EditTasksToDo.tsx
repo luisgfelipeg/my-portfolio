@@ -6,40 +6,35 @@ import { ToastContainer } from 'react-toastify';
 import { Input } from '../../../shared/components';
 import { LayoutBase } from '../../../shared/layouts';
 
-export function EditToDo() {
+export function EditTasksToDo() {
   const navigate = useNavigate();
 
   const { id } = useParams<'id'>();
+  const { task } = useParams<'task'>();
   const [users, setUsers] = useState<any>([]);
   const [nameToDo, setNameToDo] = useState<any>([]);
 
   function save() {
     users.map((name: any) => {
       if (name.nameToDo === id) {
-        name.nameToDo = nameToDo;
-        localStorage.setItem('users', JSON.stringify(users));
-      }
-    });
-    navigate('/meus-projetos/to-do-list');
-  }
-
-  function wichToDo() {
-    users.map((name: any) => {
-      if (name.nameToDo === id) {
-        setNameToDo(name.nameToDo);
+        name.toDo.map((item: any) => {
+          if (item.task === task) {
+            item.task = nameToDo;
+            localStorage.setItem('users', JSON.stringify(users));
+          }
+        });
+        navigate(`/meus-projetos/to-do-list/${id}`);
       }
     });
   }
 
   useEffect(() => {
-    if (!users.length) {
-      const user = localStorage.getItem('users');
-      if (user) {
-        setUsers(JSON.parse(user));
-      }
+    const user = localStorage.getItem('users');
+    if (user) {
+      setUsers(JSON.parse(user));
+      setNameToDo(task);
     }
-    wichToDo();
-  }, [users]);
+  }, []);
 
   return (
     <LayoutBase>
@@ -75,7 +70,7 @@ export function EditToDo() {
             </button>
           </div>
           <div className='flex flex-col max-w-full justify-center items-center'>
-            <label className='text-white'>Nome da Lista:</label>
+            <label className='text-white'>Tarefa:</label>
             {users.map((name: any) => {
               if (name.nameToDo === id)
                 return (

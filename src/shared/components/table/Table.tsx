@@ -5,6 +5,7 @@ interface TableProps {
   titleColumn4?: string;
   titleColumn5?: string;
   children: React.ReactNode;
+  className?: string;
 }
 
 export const Table = ({
@@ -14,9 +15,12 @@ export const Table = ({
   titleColumn4,
   titleColumn5,
   children,
+  className,
 }: TableProps) => {
   return (
-    <table className='shadow-md shadow-indigo-100 styled-table mb-8'>
+    <table
+      className={`shadow-md shadow-indigo-100 styled-table mb-8 mx-60 ${className}`}
+    >
       <thead className='bg-blue-900 text-white text-center text-xl max-sm:text-base border-solid border-b border-neutral-300'>
         <tr>
           {titleColumn1 && <th className='py-4 max-sm:py-2'>{titleColumn1}</th>}

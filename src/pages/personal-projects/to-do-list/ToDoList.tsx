@@ -5,7 +5,7 @@ import { LayoutBase } from '../../../shared/layouts';
 import { ToastContainer } from 'react-toastify';
 import { Link, useNavigate } from 'react-router-dom';
 
-export const ToDoList = () => {
+export function ToDoList() {
   const navigate = useNavigate();
 
   const [show, setShow] = useState(false);
@@ -83,7 +83,7 @@ export const ToDoList = () => {
           hiddenModal={hiddenModal}
         />
         <div className={`flex flex-col`}>
-          <div className='flex justify-between items-center mx-20 py-3 max-sm:mx-5'>
+          <div className='flex justify-between items-center mx-60 py-3 max-sm:mx-5'>
             <h1>{null}</h1>
             <strong className='text-2xl max-sm:text-xl text-white'>
               <h1>Crie sua Lista de Tarefas</h1>
@@ -97,57 +97,59 @@ export const ToDoList = () => {
               <IoIosAddCircleOutline />
             </button>
           </div>
-          <Table
-            titleColumn1='Data'
-            titleColumn2='Nome da Lista'
-            titleColumn3='Ações'
-          >
-            {users.map((user: any) => {
-              return (
-                <tr
-                  key={user.id}
-                  className='border-solid border-b border-neutral-300'
-                >
-                  <td
-                    className={`py-3 max-sm:py-2 ${
-                      user.done && 'line-through'
-                    }`}
+          {users.length >= 1 && (
+            <Table
+              titleColumn1='Data'
+              titleColumn2='Nome da Lista'
+              titleColumn3='Ações'
+            >
+              {users.map((user: any) => {
+                return (
+                  <tr
+                    key={user.id}
+                    className='border-solid border-b border-neutral-300'
                   >
-                    {user.date}
-                  </td>
-                  <td
-                    className={`py-3 max-sm:py-2 ${
-                      user.done && 'line-through'
-                    }`}
-                  >
-                    <Link
-                      to={`/meus-projetos/to-do-list/${user.nameToDo}`}
-                      className='cursor-pointer'
+                    <td
+                      className={`py-3 max-sm:py-2 ${
+                        user.done && 'line-through'
+                      }`}
                     >
-                      {user.nameToDo}
-                    </Link>
-                  </td>
-                  <td className='py-3 max-sm:py-2'>
-                    {
-                      <ActionsList
-                        done={() => done(user)}
-                        complete={user.done}
-                        removeToDo={() => removeToDo(user)}
-                        edit={() =>
-                          navigate(
-                            `/meus-projetos/to-do-list/edit/${user.nameToDo}`
-                          )
-                        }
-                      />
-                    }
-                  </td>
-                </tr>
-              );
-            })}
-          </Table>
+                      {user.date}
+                    </td>
+                    <td
+                      className={`py-3 max-sm:py-2 ${
+                        user.done && 'line-through'
+                      }`}
+                    >
+                      <Link
+                        to={`/meus-projetos/to-do-list/${user.nameToDo}`}
+                        className='cursor-pointer'
+                      >
+                        {user.nameToDo}
+                      </Link>
+                    </td>
+                    <td className='py-3 max-sm:py-2'>
+                      {
+                        <ActionsList
+                          done={() => done(user)}
+                          complete={user.done}
+                          removeToDo={() => removeToDo(user)}
+                          edit={() =>
+                            navigate(
+                              `/meus-projetos/to-do-list/edit/${user.nameToDo}`
+                            )
+                          }
+                        />
+                      }
+                    </td>
+                  </tr>
+                );
+              })}
+            </Table>
+          )}
           <ToastContainer style={{ top: '50px' }} />
         </div>
       </div>
     </LayoutBase>
   );
-};
+}

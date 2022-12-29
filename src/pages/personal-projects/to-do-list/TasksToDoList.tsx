@@ -6,7 +6,7 @@ import { ToastContainer } from 'react-toastify';
 import { ActionsList, Modal, Table } from '../../../shared/components';
 import { LayoutBase } from '../../../shared/layouts';
 
-export const NewToDo = () => {
+export function TasksToDoList() {
   const navigate = useNavigate();
 
   const { id } = useParams<'id'>();
@@ -73,7 +73,7 @@ export const NewToDo = () => {
           hiddenModal={hiddenModal}
         />
         <div className={`flex flex-col`}>
-          <div className='flex justify-between items-center mx-20 py-3 max-sm:mx-5'>
+          <div className='flex justify-between items-center mx-60 py-3 max-sm:mx-5'>
             <button
               onClick={() => {
                 navigate('/meus-projetos/to-do-list');
@@ -124,6 +124,11 @@ export const NewToDo = () => {
                             done={() => done(user, task)}
                             complete={task.done}
                             removeToDo={() => removeToDo(user, task)}
+                            edit={() =>
+                              navigate(
+                                `/meus-projetos/to-do-list/edit/${user.nameToDo}/${task.task}`
+                              )
+                            }
                           />
                         }
                       </td>
@@ -138,4 +143,4 @@ export const NewToDo = () => {
       </div>
     </LayoutBase>
   );
-};
+}
