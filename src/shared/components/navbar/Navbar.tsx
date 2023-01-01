@@ -49,6 +49,7 @@ export const Navbar = ({ children, menu, logo }: NavbarProps) => {
                   <li
                     className='text-xl font-bold whitespace-nowrap lg:ml-8 lg:my-0 my-7'
                     key={item.menuItem}
+                    onClick={() => (open ? setOpen(!open) : null)}
                   >
                     <Link
                       to={item.menuLink}
