@@ -11,15 +11,15 @@ export const Projects = () => {
         <h5 className='text-gray-400 font-bold text-sm'>
           Desenvolvedor Front-End
         </h5>
-        <div className='mt-40 grid grid-cols-3 w-full h-full gap-10 max-md:mt-20 max-2xl:grid-cols-2 max-xl:gap-5 max-lg:grid-cols-1 max-lg:mt-20 max-lg:w-3/4'>
+        <div className='mt-40 grid grid-cols-3 w-full h-full gap-10 max-md:mt-20 max-2xl:grid-cols-2 max-xl:gap-5 max-lg:grid-cols-1 max-lg:mt-20 max-lg:w-3/4 max-sm:w-full'>
           {myProjects.map((project) => (
             <div
               key={project.name}
-              className={`h-full ${
-                project.description.length === 0 && 'h-[450px]'
-              } gap-4 bg-blue-900 flex justify-center items-center flex-col rounded-3xl hover:bg-slate-900 hover:outline hover:outline-2 hover:outline-sky-300 duration-200`}
+              className={`h-full gap-4 bg-blue-900 flex justify-center items-center flex-col rounded-3xl hover:bg-slate-900 hover:outline hover:outline-2 hover:outline-sky-300 duration-200`}
             >
-              <strong className='mt-3 text-xl'>{project.name}</strong>
+              <strong className='mt-3 text-xl text-center'>
+                {project.name}
+              </strong>
               <ImageSlider items={project.thumbnail} />
               <p className='text-lg mx-3 text-center'>{project.description}</p>
               {project.description.length > 0 && (
