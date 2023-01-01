@@ -12,7 +12,7 @@ import { LayoutBase } from '../shared/layouts';
 export const Home = () => {
   return (
     <LayoutBase>
-      <div className='flex justify-center items-center flex-col gap-52 text-white max-md:gap-28'>
+      <div className='flex justify-center items-center flex-col gap-52 text-white max-md:gap-20'>
         <div className='flex flex-col justify-center items-center'>
           <h5>Olá, eu sou o</h5>
           <h1 className='text-5xl font-bold'>Luis Felipe</h1>
@@ -26,7 +26,7 @@ export const Home = () => {
           >
             Download CV
           </a>
-          <div className='w-96 flex justify-center overflow-hidden items-center bg-black rounded-full'>
+          <div className='w-96 flex justify-center overflow-hidden items-center bg-black rounded-full max-sm:w-80 max-sm:h-80'>
             <img className='w-52 me' src={Me} alt='Minha foto' />
           </div>
 
@@ -59,7 +59,7 @@ export const Home = () => {
               src={MeAbout}
               alt='Minha foto'
             />
-            <div className='w-2/5 max-lg:w-3/4'>
+            <div className='w-2/5 max-lg:w-3/4 max-md:w-full'>
               <p className='text-gray-400 text-xl'>
                 Tenho 25 anos, sempre fui apaixonado por tecnologia, e decidi
                 seguir nessa área que sempre fez parte de alguma forma na minha
@@ -77,8 +77,8 @@ export const Home = () => {
         <div className='flex justify-center flex-col items-center'>
           <h5 className='text-gray-400 font-bold text-sm'>Minhas</h5>
           <h1 className='text-4xl font-bold text-sky-300'>Habilidades!</h1>
-          <div className='flex flex-1 gap-40 mt-20 max-2xl:gap-20 max-xl:gap-10 max-lg:flex-col'>
-            <div className='bg-blue-900 flex justify-center items-center flex-col p-24 rounded-3xl hover:bg-slate-900 hover:outline hover:outline-2 hover:outline-sky-300 duration-200'>
+          <div className='flex flex-1 gap-40 mt-20 max-2xl:gap-20 max-xl:gap-10 max-lg:flex-col max-md:mt-10'>
+            <div className='bg-blue-900 flex justify-center items-center flex-col p-24 max-md:p-14 rounded-3xl hover:bg-slate-900 hover:outline hover:outline-2 hover:outline-sky-300 duration-200'>
               <h2 className='text-sky-300 text-xl font-bold'>Frontend</h2>
               <div className='grid grid-cols-2 justify-items-center justify-center gap-32 mt-5'>
                 <div>
@@ -144,7 +144,7 @@ export const Home = () => {
               </div>
             </div>
 
-            <div className='bg-blue-900 flex justify-center items-center flex-col p-24 rounded-3xl hover:bg-slate-900 hover:outline hover:outline-2 hover:outline-sky-300 duration-200'>
+            <div className='bg-blue-900 flex justify-center items-center flex-col p-24 max-md:p-14 rounded-3xl hover:bg-slate-900 hover:outline hover:outline-2 hover:outline-sky-300 duration-200'>
               <h2 className='text-sky-300 text-xl font-bold'>Backend</h2>
               <div className='grid grid-cols-2 justify-items-center justify-center gap-32 mt-5'>
                 <div>
