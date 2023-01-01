@@ -73,7 +73,7 @@ export function TasksToDoList() {
           hiddenModal={hiddenModal}
         />
         <div className={`flex flex-col`}>
-          <div className='flex justify-between items-center mx-60 py-3 max-sm:mx-5'>
+          <div className='flex justify-between items-center mx-60 py-3 max-2xl:mx-32 max-lg:mx-20 max-md:mx-10 max-sm:mx-2'>
             <button
               onClick={() => {
                 navigate('/meus-projetos/to-do-list');
@@ -85,7 +85,7 @@ export function TasksToDoList() {
             <strong className='text-2xl max-sm:text-xl text-white'>
               {
                 <h1>
-                  Lista de Tarefas:{' '}
+                  Lista de Tarefa:{' '}
                   {users.map((name: any) => {
                     if (name.nameToDo === id) return name.nameToDo;
                     return undefined;

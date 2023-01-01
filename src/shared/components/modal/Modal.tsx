@@ -23,7 +23,7 @@ export const Modal = ({
   return (
     <div
       id='modal'
-      className={`fixed top-0 left-0 flex justify-center items-center gap-2 w-screen h-screen bg-black/[0.80] ${
+      className={`fixed top-0 left-0 flex justify-center items-center gap-2 w-screen h-screen bg-black/[0.80] max-sm:flex-col ${
         !show && 'hidden'
       }`}
       onClick={(e) => {
@@ -36,7 +36,7 @@ export const Modal = ({
       {list ? (
         <Input
           type='text'
-          className='w-1/4'
+          className='w-1/4 max-md:w-1/3 max-sm:w-2/4'
           placeholder='Tarefa'
           value={newToDo.toDo}
           onChange={(e) =>
@@ -47,7 +47,7 @@ export const Modal = ({
         <>
           <Input
             type='text'
-            className='w-1/4'
+            className='w-1/4 max-md:w-1/3 max-sm:w-2/4'
             placeholder={iNameToDo}
             value={newToDo.nameToDo}
             onChange={(e) =>
@@ -59,7 +59,7 @@ export const Modal = ({
           />
           <Input
             type='text'
-            className='w-1/4'
+            className='w-1/4 max-md:w-1/3 max-sm:w-2/4'
             placeholder='Primeira Tarefa'
             value={newToDo.toDo}
             onChange={(e) =>

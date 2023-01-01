@@ -73,7 +73,7 @@ export function ToDoList() {
 
   return (
     <LayoutBase>
-      <div className='pt-24'>
+      <div className='pt-24 flex flex-col'>
         <Modal
           iNameToDo='Nome da Lista'
           newToDo={newToDo}
@@ -82,73 +82,72 @@ export function ToDoList() {
           show={show}
           hiddenModal={hiddenModal}
         />
-        <div className={`flex flex-col`}>
-          <div className='flex justify-between items-center mx-60 py-3 max-sm:mx-5'>
-            <h1>{null}</h1>
-            <strong className='text-2xl max-sm:text-xl text-white'>
-              <h1>Crie sua Lista de Tarefas</h1>
-            </strong>
-            <button
-              onClick={() => {
-                setShow(true);
-              }}
-              className='text-blue-500 text-5xl'
-            >
-              <IoIosAddCircleOutline />
-            </button>
-          </div>
-          {users.length >= 1 && (
-            <Table
-              titleColumn1='Data'
-              titleColumn2='Nome da Lista'
-              titleColumn3='Ações'
-            >
-              {users.map((user: any) => {
-                return (
-                  <tr
-                    key={user.id}
-                    className='border-solid border-b border-neutral-300'
-                  >
-                    <td
-                      className={`py-3 max-sm:py-2 ${
-                        user.done && 'line-through'
-                      }`}
-                    >
-                      {user.date}
-                    </td>
-                    <td
-                      className={`py-3 max-sm:py-2 ${
-                        user.done && 'line-through'
-                      }`}
-                    >
-                      <Link
-                        to={`/meus-projetos/to-do-list/${user.nameToDo}`}
-                        className='cursor-pointer'
-                      >
-                        {user.nameToDo}
-                      </Link>
-                    </td>
-                    <td className='py-3 max-sm:py-2'>
-                      {
-                        <ActionsList
-                          done={() => done(user)}
-                          complete={user.done}
-                          removeToDo={() => removeToDo(user)}
-                          edit={() =>
-                            navigate(
-                              `/meus-projetos/to-do-list/edit/${user.nameToDo}`
-                            )
-                          }
-                        />
-                      }
-                    </td>
-                  </tr>
-                );
-              })}
-            </Table>
-          )}
-          <ToastContainer style={{ top: '50px' }} />
+        <div className='flex justify-between items-center mx-60 py-3 max-2xl:mx-32 max-lg:mx-20 max-md:mx-10 max-sm:mx-2'>
+          <h1>{null}</h1>
+          <strong className='text-2xl max-sm:text-xl text-white'>
+            <h1>Crie sua Lista de Tarefas</h1>
+          </strong>
+          <button
+            onClick={() => {
+              setShow(true);
+            }}
+            className='text-blue-500 text-5xl'
+          >
+            <IoIosAddCircleOutline />
+          </button>
         </div>
+
+        {users.length >= 1 && (
+          <Table
+            titleColumn1='Data'
+            titleColumn2='Nome da Lista'
+            titleColumn3='Ações'
+          >
+            {users.map((user: any) => {
+              return (
+                <tr
+                  key={user.id}
+                  className='border-solid border-b border-neutral-300'
+                >
+                  <td
+                    className={`py-3 max-sm:py-2 ${
+                      user.done && 'line-through'
+                    }`}
+                  >
+                    {user.date}
+                  </td>
+                  <td
+                    className={`py-3 max-sm:py-2 ${
+                      user.done && 'line-through'
+                    }`}
+                  >
+                    <Link
+                      to={`/meus-projetos/to-do-list/${user.nameToDo}`}
+                      className='cursor-pointer'
+                    >
+                      {user.nameToDo}
+                    </Link>
+                  </td>
+                  <td className='py-3 max-sm:py-2'>
+                    {
+                      <ActionsList
+                        done={() => done(user)}
+                        complete={user.done}
+                        removeToDo={() => removeToDo(user)}
+                        edit={() =>
+                          navigate(
+                            `/meus-projetos/to-do-list/edit/${user.nameToDo}`
+                          )
+                        }
+                      />
+                    }
+                  </td>
+                </tr>
+              );
+            })}
+          </Table>
+        )}
+        <ToastContainer style={{ top: '50px' }} />
       </div>
     </LayoutBase>
   );

@@ -19,9 +19,9 @@ export const Table = ({
 }: TableProps) => {
   return (
     <table
-      className={`shadow-md shadow-indigo-100 styled-table mb-8 mx-60 ${className}`}
+      className={`shadow-md shadow-indigo-100 styled-table mb-8 mx-60 ${className} max-2xl:mx-32 max-lg:mx-20 max-md:mx-10 max-sm:mx-0`}
     >
-      <thead className='bg-blue-900 text-white text-center text-xl max-sm:text-base border-solid border-b border-neutral-300'>
+      <thead className='bg-blue-900 text-white text-center text-xl max-sm:text-sm border-solid border-b border-neutral-300'>
         <tr>
           {titleColumn1 && <th className='py-4 max-sm:py-2'>{titleColumn1}</th>}
           {titleColumn2 && <th className='py-4 max-sm:py-2'>{titleColumn2}</th>}
@@ -30,7 +30,7 @@ export const Table = ({
           {titleColumn5 && <th className='py-4 max-sm:py-2'>{titleColumn5}</th>}
         </tr>
       </thead>
-      <tbody className='text-center text-lg max-sm:text-base text-white'>
+      <tbody className='text-center text-lg max-sm:text-xs text-white'>
         {children}
       </tbody>
     </table>
