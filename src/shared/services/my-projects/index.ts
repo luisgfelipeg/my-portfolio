@@ -24,18 +24,4 @@ export const myProjects = [
       },
     ],
   },
-  {
-    name: 'Projeto em andamento',
-    description: '',
-    url: '',
-
-    thumbnail: [],
-  },
-  {
-    name: 'Outro Projeto em andamento',
-    description: '',
-    url: '',
-
-    thumbnail: [],
-  },
 ];
