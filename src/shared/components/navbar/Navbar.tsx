@@ -1,5 +1,5 @@
 import { useState, ReactNode } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { IoCloseSharp } from 'react-icons/io5';
 import { FaBars } from 'react-icons/fa';
 import { BsChatLeftText } from 'react-icons/bs';
@@ -15,6 +15,8 @@ type NavbarProps = {
 };
 
 export const Navbar = ({ children, menu, logo }: NavbarProps) => {
+  const navigate = useNavigate();
+
   const [open, setOpen] = useState<Boolean>(false);
 
   return (
@@ -61,7 +63,10 @@ export const Navbar = ({ children, menu, logo }: NavbarProps) => {
                 );
               return <></>;
             })}
-            <button className=' flex items-center bg-slate-900 text-white font-bold font-[Poppins] py-2 px-6 rounded-lg lg:ml-8 hover:bg-white hover:text-slate-900 duration-300'>
+            <button
+              className='flex items-center bg-slate-900 text-white font-bold font-[Poppins] py-2 px-6 rounded-lg lg:ml-8 hover:bg-white hover:text-slate-900 duration-300'
+              onClick={() => navigate('/contato')}
+            >
               CONTATO |
               <BsChatLeftText className='ml-2 text-lg' />
             </button>
