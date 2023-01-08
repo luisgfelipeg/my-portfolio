@@ -27,7 +27,7 @@ export default function Contact() {
         <h5 className='text-gray-400 font-bold text-sm'>Entre em</h5>
         <h1 className='text-4xl font-bold text-sky-300'>Contato</h1>
 
-        <div className='w-3/5 grid grid-cols-8 text-white gap-[12%] mt-20'>
+        <div className='w-3/5 grid grid-cols-8 text-white gap-[12%] mt-20 max-xl:flex max-xl:flex-col'>
           <div className='gap-5 col-span-3 flex flex-col'>
             <article className='bg-blue-900 p-5 rounded-3xl center text-center flex justify-center items-center flex-col border-solid border-2 border-transparent transition hover:bg-transparent hover:border-sky-300'>
               <MdOutlineEmail className='text-2xl mb-2' />
@@ -56,22 +56,30 @@ export default function Contact() {
               </a>
             </article>
           </div>
-          <form onSubmit={sendEmail} className='col-span-5 flex flex-col gap-5'>
-            <input
-              className='w-full p-6 rounded-lg bg-transparent border border-2 border-solid border-sky-300'
-              type='text'
-              name='name'
-              placeholder='Seu Nome Completo'
-              required
-              onChange={(e: any) =>
-                setForm((rest) => ({ ...rest, name: e.target.value }))
-              }
-            />
+          <form
+            onSubmit={sendEmail}
+            className='col-span-5 flex flex-col items-center gap-5 max-xl:mt-5'
+          >
+            <div className='w-full text-center'>
+              <label className='text-gray-400 font-bold text-sm'>
+                Envie uma Mensagem abaixo
+              </label>
+              <input
+                className='w-full p-6 rounded-lg bg-transparent border border-2 border-solid border-sky-300'
+                type='text'
+                name='name'
+                placeholder='Seu Nome Completo'
+                required
+                onChange={(e: any) =>
+                  setForm((rest) => ({ ...rest, name: e.target.value }))
+                }
+              />
+            </div>
             <input
               className='w-full p-6 rounded-lg bg-transparent border border-2 border-solid border-sky-300'
               type='email'
               name='email'
-              placeholder='Seu E-Mail'
+              placeholder='Seu E-Mail ou Número para Contato'
               required
               onChange={(e: any) =>
                 setForm((rest) => ({ ...rest, email: e.target.value }))
@@ -90,7 +98,7 @@ export default function Contact() {
             <div className='flex justify-center'>
               <button
                 type='submit'
-                className='mt-1 p-2 text-lg text-sky-300 hover:text-white duration-300 w-40'
+                className='p-2 text-lg text-sky-300 hover:text-white duration-300 w-40'
               >
                 Enviar Mensagem
               </button>
