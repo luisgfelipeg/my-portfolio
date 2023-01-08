@@ -24,7 +24,7 @@ export const Projects = () => {
         <div
           className={`mt-20 grid grid-cols-${projects} ${
             projects === 1 ? 'w-2/4' : 'w-full h-full'
-          } gap-10 max-md:mt-20 max-2xl:grid-cols-2 max-xl:gap-5 max-lg:grid-cols-1 max-lg:mt-20 max-lg:w-3/4 max-sm:w-full`}
+          } gap-10 max-2xl:grid-cols-2 max-xl:gap-5 max-lg:grid-cols-1 max-xl:mt-10 max-lg:w-3/4 max-sm:w-full`}
         >
           {myProjects.map((project) => (
             <div
@@ -38,7 +38,7 @@ export const Projects = () => {
               <p className='text-lg mx-3 text-center'>{project.description}</p>
               {project.description.length > 0 && (
                 <a
-                  href='/meus-projetos/to-do-list'
+                  href={project.url}
                   className='p-4 mb-3 rounded-full text-lg text-sky-300 hover:text-slate-900 hover:bg-white duration-300'
                 >
                   Ver Projeto

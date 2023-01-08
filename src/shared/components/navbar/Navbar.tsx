@@ -65,7 +65,12 @@ export const Navbar = ({ children, menu, logo }: NavbarProps) => {
             })}
             <button
               className='flex items-center bg-slate-900 text-white font-bold font-[Poppins] py-2 px-6 rounded-lg lg:ml-8 hover:bg-white hover:text-slate-900 duration-300'
-              onClick={() => navigate('/contato')}
+              onClick={() => {
+                navigate('/contato');
+                if (open) {
+                  setOpen(!open);
+                }
+              }}
             >
               CONTATO |
               <BsChatLeftText className='ml-2 text-lg' />

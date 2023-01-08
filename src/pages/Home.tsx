@@ -12,7 +12,7 @@ import { LayoutBase } from '../shared/layouts';
 export const Home = () => {
   return (
     <LayoutBase>
-      <div className='flex justify-center items-center flex-col gap-52 text-white max-md:gap-20'>
+      <div className='flex justify-center items-center flex-col gap-52 text-white max-xl:gap-20'>
         <div className='flex flex-col justify-center items-center'>
           <h5>Olá, eu sou o</h5>
           <h1 className='text-5xl font-bold'>Luis Felipe</h1>
@@ -53,7 +53,7 @@ export const Home = () => {
         <div className='flex justify-center flex-col items-center'>
           <h5 className='text-gray-400 font-bold text-sm'>Um pouco</h5>
           <h1 className='text-4xl font-bold text-sky-300'>Sobre mim!</h1>
-          <div className='mt-20 flex justify-center gap-48 max-lg:flex-col max-lg:items-center max-lg:gap-10'>
+          <div className='mt-20 max-xl:mt-10 flex justify-center gap-48 max-lg:flex-col max-lg:items-center max-lg:gap-10'>
             <img
               className='w-96 rounded-3xl ring-8'
               src={MeAbout}
@@ -77,7 +77,7 @@ export const Home = () => {
         <div className='flex justify-center flex-col items-center'>
           <h5 className='text-gray-400 font-bold text-sm'>Minhas</h5>
           <h1 className='text-4xl font-bold text-sky-300'>Habilidades!</h1>
-          <div className='flex flex-1 gap-40 mt-20 max-2xl:gap-20 max-xl:gap-10 max-lg:flex-col max-md:mt-10'>
+          <div className='flex flex-1 gap-40 mt-20 max-2xl:gap-20 max-xl:gap-10 max-lg:flex-col max-xl:mt-10'>
             <div className='bg-blue-900 flex justify-center items-center flex-col p-24 max-md:p-14 rounded-3xl hover:bg-slate-900 hover:outline hover:outline-2 hover:outline-sky-300 duration-200'>
               <h2 className='text-sky-300 text-xl font-bold'>Frontend</h2>
               <div className='grid grid-cols-2 justify-items-center justify-center gap-32 mt-5'>

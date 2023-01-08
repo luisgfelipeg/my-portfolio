@@ -24,4 +24,24 @@ export const myProjects = [
       },
     ],
   },
+  {
+    name: 'Conversor de número binário para decimal',
+    description: 'Um simples conversor de número binário para decimal',
+    url: 'https://rococo-cucurucho-3fdd39.netlify.app/meus-projetos/binary-decimal-converter',
+
+    thumbnail: [
+      {
+        imageSrc: ToDo,
+        imageAlt: 'Prévia do To Do List',
+      },
+      {
+        imageSrc: ToDo2,
+        imageAlt: 'Prévia da Criação da Lista',
+      },
+      {
+        imageSrc: ToDo3,
+        imageAlt: 'Prévia da Criação das Tarefas',
+      },
+    ],
+  },
 ];
