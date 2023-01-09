@@ -64,7 +64,7 @@ body {
   transition: none;
 }
 
-// This className belong to BDC project
+/* This className belong to BDC project */
 .bdcButton {
   display: inline-block;
   border-radius: 4px;
