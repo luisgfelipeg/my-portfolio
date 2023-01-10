@@ -4,20 +4,6 @@ import { LayoutBase } from '../shared/layouts';
 import { myProjects } from '../shared/services/my-projects';
 
 export const Projects = () => {
-  const [projects, setProjects] = useState(0);
-
-  function howMuchProjects() {
-    if (myProjects.length <= 3) {
-      setProjects(myProjects.length);
-    } else if (myProjects.length > 3) {
-      setProjects(3);
-    }
-  }
-
-  useEffect(() => {
-    howMuchProjects();
-  }, [projects]);
-
   return (
     <LayoutBase>
       <div className='flex justify-center items-center flex-col gap-3 text-white mb-20'>
@@ -26,11 +12,7 @@ export const Projects = () => {
         <h5 className='text-gray-400 font-bold text-sm'>
           Desenvolvedor Front-End
         </h5>
-        <div
-          className={`mt-20 grid grid-cols-${projects} ${
-            projects === 1 ? 'w-2/4' : 'w-full h-full'
-          } gap-10 max-2xl:grid-cols-2 max-xl:gap-5 max-lg:grid-cols-1 max-xl:mt-10 max-lg:w-3/4 max-sm:w-full`}
-        >
+        <div className='mt-20 grid grid-cols-3 w-full h-full gap-10 max-2xl:grid-cols-2 max-xl:gap-5 max-lg:grid-cols-1 max-xl:mt-10 max-lg:w-3/4 max-sm:w-full'>
           {myProjects.map((project) => (
             <div
               key={project.name}
