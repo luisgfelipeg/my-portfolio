@@ -6,13 +6,18 @@ import { myProjects } from '../shared/services/my-projects';
 export const Projects = () => {
   const [projects, setProjects] = useState(0);
 
-  useEffect(() => {
+  function howMuchProjects() {
     if (myProjects.length <= 3) {
       setProjects(myProjects.length);
     } else if (myProjects.length > 3) {
       setProjects(3);
     }
-  }, []);
+  }
+
+  useEffect(() => {
+    howMuchProjects();
+  }, [projects]);
+
   return (
     <LayoutBase>
       <div className='flex justify-center items-center flex-col gap-3 text-white mb-20'>
