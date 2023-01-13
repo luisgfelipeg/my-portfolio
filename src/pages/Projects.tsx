@@ -1,5 +1,3 @@
-import { useEffect, useState } from 'react';
-import { ScrollRestoration } from 'react-router-dom';
 import { ImageSlider } from '../shared/components';
 import { LayoutBase } from '../shared/layouts';
 import { myProjects } from '../shared/services/my-projects';
@@ -36,7 +34,6 @@ export const Projects = () => {
           ))}
         </div>
       </div>
-      <ScrollRestoration />
     </LayoutBase>
   );
 };
