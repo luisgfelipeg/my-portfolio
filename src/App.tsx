@@ -1,6 +1,6 @@
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, ScrollRestoration } from 'react-router-dom';
 import { AppRoutes } from './routes';
-import { Footer, Navbar } from './shared/components';
+import { Navbar } from './shared/components';
 
 function App() {
   return (
@@ -13,6 +13,7 @@ function App() {
         ]}
       >
         <AppRoutes />
+        <ScrollRestoration />
       </Navbar>
     </BrowserRouter>
   );
