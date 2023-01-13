@@ -6,7 +6,7 @@ import { MdOutlineNextWeek } from 'react-icons/md';
 import Me from '../shared/assets/images/me.png';
 import CV from '../shared/assets/archives/cvLuis.pdf';
 import MeAbout from '../shared/assets/images/meAbout.jpg';
-import { Link } from 'react-router-dom';
+import { Link, ScrollRestoration } from 'react-router-dom';
 import { LayoutBase } from '../shared/layouts';
 
 export const Home = () => {
@@ -211,6 +211,7 @@ export const Home = () => {
             <MdOutlineNextWeek className='text-6xl' />
             <p className='text-4xl font-bold'>Meus Projetos!</p>
           </Link>
+          <ScrollRestoration />
         </div>
       </div>
     </LayoutBase>

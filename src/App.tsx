@@ -1,10 +1,12 @@
-import { BrowserRouter, ScrollRestoration } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import { AppRoutes } from './routes';
 import { Navbar } from './shared/components';
+import ScrollToTop from './shared/hooks/ScrollToTop';
 
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Navbar
         logo='LF'
         menu={[
@@ -13,7 +15,6 @@ function App() {
         ]}
       >
         <AppRoutes />
-        <ScrollRestoration />
       </Navbar>
     </BrowserRouter>
   );
