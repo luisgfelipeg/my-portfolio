@@ -26,7 +26,7 @@ export const myProjects = [
   {
     name: 'Pokemon Discovery',
     description:
-      'A proposta é utilizar o framework Vue para desenvolver um site que permita aos usuários pesquisar um Pokémon de interesse e visualizar seus atributos e evoluções, fazendo uso da API PokeAPI V2 como fonte de dados.',
+      'A proposta é utilizar o framework Vue para desenvolver um site que permita aos usuários pesquisar um Pokémon de interesse e visualizar seus atributos e evoluções, fazendo uso da API PokeAPI V2 como fonte de dados. (Este projeto ainda náo está finalizado)',
     url: 'https://melodic-vacherin-2069c8.netlify.app/',
 
     thumbnail: [
