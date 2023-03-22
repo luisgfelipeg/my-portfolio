@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { BsCheckLg } from 'react-icons/bs';
 import { SiLinkedin } from 'react-icons/si';
 import { AiFillGithub } from 'react-icons/ai';

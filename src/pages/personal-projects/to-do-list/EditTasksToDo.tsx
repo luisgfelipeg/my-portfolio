@@ -22,19 +22,25 @@ export function EditTasksToDo() {
             item.task = nameToDo;
             localStorage.setItem('users', JSON.stringify(users));
           }
+          return null;
         });
         navigate(`/meus-projetos/to-do-list/${id}`);
       }
+      return null;
     });
   }
 
-  useEffect(() => {
-    const user = localStorage.getItem('users');
-    if (user) {
-      setUsers(JSON.parse(user));
-      setNameToDo(task);
-    }
-  }, []);
+  useEffect(
+    () => {
+      const user = localStorage.getItem('users');
+      if (user) {
+        setUsers(JSON.parse(user));
+        setNameToDo(task);
+      }
+    },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    []
+  );
 
   return (
     <LayoutBase>
@@ -55,7 +61,7 @@ export function EditTasksToDo() {
                   Lista de Tarefas:{' '}
                   {users.map((name: any) => {
                     if (name.nameToDo === id) return name.nameToDo;
-                    return undefined;
+                    return null;
                   })}
                 </h1>
               }
@@ -81,6 +87,7 @@ export function EditTasksToDo() {
                     className='w-1/4'
                   />
                 );
+              return null;
             })}
           </div>
           <ToastContainer style={{ top: '50px' }} />

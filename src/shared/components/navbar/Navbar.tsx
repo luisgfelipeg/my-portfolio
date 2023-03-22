@@ -21,15 +21,19 @@ export const Navbar = ({ children, menu }: NavbarProps) => {
   const [active, setActive] = useState<String>('');
   const [open, setOpen] = useState<Boolean>(false);
 
-  useEffect(() => {
-    if (location.pathname === '/') {
-      setActive(menu[0].menuItem);
-    } else if (location.pathname === '/contato') {
-      setActive('contato');
-    } else {
-      setActive(menu[1].menuItem);
-    }
-  }, []);
+  useEffect(
+    () => {
+      if (location.pathname === '/') {
+        setActive(menu[0].menuItem);
+      } else if (location.pathname === '/contato') {
+        setActive('contato');
+      } else {
+        setActive(menu[1].menuItem);
+      }
+    },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    []
+  );
 
   return (
     <>
