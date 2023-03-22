@@ -1,13 +1,15 @@
-import ToDo from '../../assets/images/to-do-list.svg';
-import ToDo2 from '../../assets/images/to-do-list-2.svg';
-import ToDo3 from '../../assets/images/to-do-list-3.svg';
-import BDC from '../../assets/images/bdc.svg';
-import BDC2 from '../../assets/images/bdc-2.svg';
-import ManageStock from '../../assets/images/manage-stock.svg';
-import ManageStock2 from '../../assets/images/manage-stock-2.svg';
-import ManageStock3 from '../../assets/images/manage-stock-3.svg';
-import Catalog from '../../assets/images/catalog.svg';
-import PokeDiscovery from '../../assets/images/pokeDiscovery.svg';
+import ToDo from '../assets/images/to-do-list.svg';
+import ToDo2 from '../assets/images/to-do-list-2.svg';
+import ToDo3 from '../assets/images/to-do-list-3.svg';
+import BDC from '../assets/images/bdc.svg';
+import BDC2 from '../assets/images/bdc-2.svg';
+import ManageStock from '../assets/images/manage-stock.svg';
+import ManageStock2 from '../assets/images/manage-stock-2.svg';
+import ManageStock3 from '../assets/images/manage-stock-3.svg';
+import Catalog from '../assets/images/catalog.svg';
+import PokeDiscovery from '../assets/images/pokeDiscovery.svg';
+import { menu } from '../components';
+import Logo from '../assets/images/logo.png';
 
 export const myProjects = [
   {
@@ -95,3 +97,10 @@ export const myProjects = [
     ],
   },
 ];
+
+export const navLinks: menu[] = [
+  { menuItem: 'Página Inicial', menuLink: '/' },
+  { menuItem: 'Projetos', menuLink: '/meus-projetos' },
+];
+
+export const logo = Logo;

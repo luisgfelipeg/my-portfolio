@@ -1,6 +1,6 @@
 import { ImageSlider } from '../shared/components';
 import { LayoutBase } from '../shared/layouts';
-import { myProjects } from '../shared/services/my-projects';
+import { myProjects } from '../shared/constants';
 
 export const Projects = () => {
   return (
