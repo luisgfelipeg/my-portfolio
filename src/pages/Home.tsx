@@ -71,7 +71,7 @@ export const Home = () => {
             />
             <div className='w-2/5 max-lg:w-3/4 max-md:w-full'>
               <p className='text-gray-400 text-xl'>
-                Tenho 25 anos, sempre fui apaixonado por tecnologia, e decidi
+                Tenho 26 anos, sempre fui apaixonado por tecnologia, e decidi
                 seguir nessa área que sempre fez parte de alguma forma na minha
                 vida, desde então tenho me aprofundado cada vez mais em
                 programação. Atualmente estou cursando Análise e Desenvolvimento
