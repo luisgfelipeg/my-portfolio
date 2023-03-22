@@ -9,16 +9,26 @@ import CV from '../shared/assets/archives/cvLuis.pdf';
 import MeAbout from '../shared/assets/images/meAbout.jpg';
 import { Link } from 'react-router-dom';
 import { LayoutBase } from '../shared/layouts';
+import ReactTypingEffect from 'react-typing-effect';
 
 export const Home = () => {
   return (
     <LayoutBase>
       <div className='flex justify-center items-center flex-col gap-52 text-white max-xl:gap-20'>
         <div className='flex flex-col justify-center items-center'>
-          <h5>Olá, eu sou o</h5>
+          <ReactTypingEffect
+            text={['Bem vindo ao meu Portfólio', 'Eu sou o']}
+            displayTextRenderer={(text) => {
+              return <h5>{text}</h5>;
+            }}
+            speed={100}
+            eraseSpeed={200}
+            eraseDelay={2500}
+            typingDelay={1000}
+          />
           <h1 className='text-5xl font-bold'>Luis Felipe</h1>
           <h5 className='text-gray-400 font-bold text-sm'>
-            Desenvolvedor Front-End
+            Desenvolvedor Full-Stack
           </h5>
           <a
             href={CV}
