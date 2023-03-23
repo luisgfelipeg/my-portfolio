@@ -7,17 +7,6 @@ import backend from '../../assets/images/backend.png';
 import mobile from '../../assets/images/mobile.png';
 
 export const About = () => {
-  const myAge = (): number => {
-    const today = new Date();
-    const birthDate = new Date('1996-12-22');
-    let age = today.getFullYear() - birthDate.getFullYear();
-    const month = today.getMonth() - birthDate.getMonth();
-    if (month < 0 || (month === 0 && today.getDate() < birthDate.getDate())) {
-      age--;
-    }
-    return age;
-  };
-
   return (
     <section className='flex justify-center flex-col items-center'>
       <h5 className='text-gray-400 font-bold text-sm'>Um pouco</h5>
@@ -33,14 +22,20 @@ export const About = () => {
         <div className='w-2/5 max-lg:w-3/4 max-md:w-full'>
           <p className='text-gray-400 text-xl'>
             <>
-              Tenho {myAge()} anos, sempre fui apaixonado por tecnologia, e
-              decidi seguir nessa área que sempre fez parte de alguma forma na
-              minha vida, desde então tenho me aprofundado cada vez mais em
-              programação. Atualmente estou cursando Análise e Desenvolvimento
-              de Sistemas. Fiz esse Portfólio em React com TypeScript pra
-              mostrar o que já sou capaz de desenvolver, e estou em busca de uma
-              oportunidade profissional com disposição a me propor novos
-              desafios visando meu desenvolvimento e o da empresa onde atuar.
+              Desenvolvedor Full Stack com experiência desde o inicio de 2022
+              com projetos pessoais e comerciais. Sou apaixonado por tecnologia
+              sempre em busca em me propor a novos desafios e aprendizado no
+              desenvolvimento. A curiosidade sempre me mantém constantemente
+              atualizado aprimorando ainda mais minhas habilidades. Minhas
+              habilidades são: JavaScript, Typescript, Java, Python, SQL,
+              ReactJS, React Native, HTML5, CSS3, JQuery, TailwindCSS,
+              Bootstrap, NodeJS, MongoDB, Firebase, MySQL dentre outras
+              tecnologias com foco em desenvolvimento web/mobile com qualidade e
+              valor. Me considero uma pessoa eficiente e ágil em aprender novas
+              linguagens e tecnologias, além de possuir habilidades de me
+              adaptar facilmente a novos desafios que surgem no dia a dia! Se eu
+              pudesse me definir em 3 palavras: perseverante, esforçado e
+              otimista!
             </>
           </p>
           <div className='flex justify-center items-center gap-14 max-2xl:gap-8 max-xl:gap-3 relative max-xl:right-14 max-lg:right-0 max-sm:gap-1 max-sm:flex-wrap'>
@@ -49,7 +44,7 @@ export const About = () => {
                 variants={fadeIn('right', 'spring', 0.25, 0.75)}
                 initial='hidden'
                 whileInView='show'
-                viewport={{ once: true }}
+                viewport={{ once: true, amount: 0.6 }}
                 className='w-full green-ping-gradient p-1 rounded-3xl shadow'
               >
                 <div className='bg-blue-900 rounded-3xl py-5 px-12 min-h-[200px] max-w-[200px] flex justify-evenly items-center flex-col mt-16 max-xl:py-2 max-xl:px-6'>
@@ -69,7 +64,7 @@ export const About = () => {
                 variants={fadeIn('right', 'spring', 0.5, 0.75)}
                 initial='hidden'
                 whileInView='show'
-                viewport={{ once: true }}
+                viewport={{ once: true, amount: 0.6 }}
                 className='w-full green-ping-gradient p-1 rounded-3xl shadow'
               >
                 <div className='bg-blue-900 rounded-3xl py-5 px-12 min-h-[200px] max-w-[200px] flex justify-evenly items-center flex-col mt-16 max-xl:py-2 max-xl:px-6'>
@@ -89,7 +84,7 @@ export const About = () => {
                 variants={fadeIn('right', 'spring', 0.75, 0.75)}
                 initial='hidden'
                 whileInView='show'
-                viewport={{ once: true }}
+                viewport={{ once: true, amount: 0.6 }}
                 className='w-full green-ping-gradient p-1 rounded-3xl shadow'
               >
                 <div className='bg-blue-900 rounded-3xl py-5 px-12 min-h-[200px] max-w-[200px] flex justify-evenly items-center flex-col mt-16 max-xl:py-2 max-xl:px-6'>

@@ -12,8 +12,8 @@ export const Intro = () => {
         displayTextRenderer={(text) => {
           return <h5>{text}</h5>;
         }}
-        speed={100}
-        eraseSpeed={200}
+        speed={80}
+        eraseSpeed={80}
         eraseDelay={2500}
         typingDelay={1000}
       />

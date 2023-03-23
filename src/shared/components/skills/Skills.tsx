@@ -1,6 +1,12 @@
 import { BsCheckLg } from 'react-icons/bs';
 import { motion } from 'framer-motion';
 import { fadeIn, textVariant } from '../../utils/motion';
+import html from '../../assets/images/tech/html.png';
+import css from '../../assets/images/tech/css.png';
+import js from '../../assets/images/tech/javascript.png';
+import tail from '../../assets/images/tech/tailwind.png';
+import react from '../../assets/images/tech/reactjs.png';
+import { Row } from './skills-row/Row';
 
 export const Skills = () => {
   return (
@@ -20,39 +26,16 @@ export const Skills = () => {
           className='bg-blue-900 flex justify-center items-center flex-col p-24 max-md:p-14 rounded-3xl hover:bg-slate-900 hover:outline hover:outline-2 hover:outline-sky-300 duration-200'
           initial='hidden'
           whileInView='show'
-          viewport={{ once: true, amount: 0.25 }}
+          viewport={{ once: true, amount: 0.5 }}
           variants={fadeIn('right', 'spring', 0.5, 0.75)}
         >
           <h2 className='text-sky-300 text-xl font-bold'>Frontend</h2>
           <div className='grid grid-cols-2 justify-items-center justify-center gap-32 mt-5'>
             <div>
-              <div className='flex gap-2'>
-                <BsCheckLg className='text-sky-300 mt-1' />
-                <div>
-                  <p className='text-white font-bold text-lg'>HTML</p>
-                  <small className='text-gray-400 font-bold text-sm'>
-                    Avançado
-                  </small>
-                </div>
-              </div>
-              <div className='flex gap-2 mt-8'>
-                <BsCheckLg className='text-sky-300 mt-1' />
-                <div>
-                  <p className='text-white font-bold text-lg'>JavaScript</p>
-                  <small className='text-gray-400 font-bold text-sm'>
-                    Avançado
-                  </small>
-                </div>
-              </div>
-              <div className='flex gap-2 mt-8'>
-                <BsCheckLg className='text-sky-300 mt-1' />
-                <div>
-                  <p className='text-white font-bold text-lg'>CSS</p>
-                  <small className='text-gray-400 font-bold text-sm'>
-                    Avançado
-                  </small>
-                </div>
-              </div>
+              <Row icon={html} title='HTML5' first />
+              <Row icon={css} title='CSS3' />
+              <Row icon={js} title='JavaScript' />
+              <Row icon={react} title='ReactJS' />
             </div>
             <div>
               <div className='flex gap-2'>

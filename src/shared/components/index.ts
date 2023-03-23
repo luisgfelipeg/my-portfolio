@@ -9,3 +9,4 @@ export * from './image-slider/ImageSlider';
 export * from './intro/Intro';
 export * from './about/About';
 export * from './skills/Skills';
+export * from './skills/skills-row/Row';
