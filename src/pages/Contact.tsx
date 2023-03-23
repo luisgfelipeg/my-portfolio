@@ -65,7 +65,7 @@ export default function Contact() {
                 Envie uma Mensagem abaixo
               </label>
               <input
-                className='w-full p-6 rounded-lg bg-transparent border border-2 border-solid border-sky-300'
+                className='w-full p-6 rounded-lg bg-transparent border border-solid border-sky-300'
                 type='text'
                 name='name'
                 placeholder='Seu Nome Completo'
@@ -76,7 +76,7 @@ export default function Contact() {
               />
             </div>
             <input
-              className='w-full p-6 rounded-lg bg-transparent border border-2 border-solid border-sky-300'
+              className='w-full p-6 rounded-lg bg-transparent border border-solid border-sky-300'
               type='email'
               name='email'
               placeholder='Seu E-Mail ou Número para Contato'
@@ -86,7 +86,7 @@ export default function Contact() {
               }
             />
             <textarea
-              className='w-full p-6 rounded-lg bg-transparent border border-2 border-solid border-sky-300 resize-none'
+              className='w-full p-6 rounded-lg bg-transparent border border-solid border-sky-300 resize-none'
               name='message'
               placeholder='Sua Mensagem'
               required

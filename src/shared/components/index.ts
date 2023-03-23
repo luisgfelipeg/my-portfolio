@@ -6,3 +6,6 @@ export * from './modal/Modal';
 export * from './table/Table';
 export * from './action-list/ActionList';
 export * from './image-slider/ImageSlider';
+export * from './intro/Intro';
+export * from './about/About';
+export * from './skills/Skills';

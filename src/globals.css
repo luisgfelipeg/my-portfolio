@@ -54,6 +54,9 @@ body {
 
 .me {
   filter: drop-shadow(2px 1px 0 white) drop-shadow(-1px -1px 0 white);
+  position: relative;
+  top: 20px;
+  right: 3px;
 }
 
 .swiper-list {
@@ -103,4 +106,8 @@ body {
 .bdcButton:hover .bdcSpan:after {
   opacity: 1;
   right: 0;
+}
+
+.border-custom {
+  border-radius: 50%;
 }
