@@ -26,16 +26,11 @@ export const About = () => {
               com projetos pessoais e comerciais. Sou apaixonado por tecnologia
               sempre em busca em me propor a novos desafios e aprendizado no
               desenvolvimento. A curiosidade sempre me mantém constantemente
-              atualizado aprimorando ainda mais minhas habilidades. Minhas
-              habilidades são: JavaScript, Typescript, Java, Python, SQL,
-              ReactJS, React Native, HTML5, CSS3, JQuery, TailwindCSS,
-              Bootstrap, NodeJS, MongoDB, Firebase, MySQL dentre outras
-              tecnologias com foco em desenvolvimento web/mobile com qualidade e
-              valor. Me considero uma pessoa eficiente e ágil em aprender novas
-              linguagens e tecnologias, além de possuir habilidades de me
-              adaptar facilmente a novos desafios que surgem no dia a dia! Se eu
-              pudesse me definir em 3 palavras: perseverante, esforçado e
-              otimista!
+              atualizado aprimorando ainda mais minhas habilidades. Me considero
+              uma pessoa eficiente e ágil em aprender novas linguagens e
+              tecnologias, além de possuir habilidades de me adaptar facilmente
+              a novos desafios que surgem no dia a dia! Se eu pudesse me definir
+              em 3 palavras: perseverante, esforçado e otimista!
             </>
           </p>
           <div className='flex justify-center items-center gap-14 max-2xl:gap-8 max-xl:gap-3 relative max-xl:right-14 max-lg:right-0 max-sm:gap-1 max-sm:flex-wrap'>
@@ -44,7 +39,7 @@ export const About = () => {
                 variants={fadeIn('right', 'spring', 0.25, 0.75)}
                 initial='hidden'
                 whileInView='show'
-                viewport={{ once: true, amount: 0.6 }}
+                viewport={{ once: true, amount: 0.3 }}
                 className='w-full green-ping-gradient p-1 rounded-3xl shadow'
               >
                 <div className='bg-blue-900 rounded-3xl py-5 px-12 min-h-[200px] max-w-[200px] flex justify-evenly items-center flex-col mt-16 max-xl:py-2 max-xl:px-6'>
@@ -64,7 +59,7 @@ export const About = () => {
                 variants={fadeIn('right', 'spring', 0.5, 0.75)}
                 initial='hidden'
                 whileInView='show'
-                viewport={{ once: true, amount: 0.6 }}
+                viewport={{ once: true, amount: 0.3 }}
                 className='w-full green-ping-gradient p-1 rounded-3xl shadow'
               >
                 <div className='bg-blue-900 rounded-3xl py-5 px-12 min-h-[200px] max-w-[200px] flex justify-evenly items-center flex-col mt-16 max-xl:py-2 max-xl:px-6'>
@@ -84,7 +79,7 @@ export const About = () => {
                 variants={fadeIn('right', 'spring', 0.75, 0.75)}
                 initial='hidden'
                 whileInView='show'
-                viewport={{ once: true, amount: 0.6 }}
+                viewport={{ once: true, amount: 0.3 }}
                 className='w-full green-ping-gradient p-1 rounded-3xl shadow'
               >
                 <div className='bg-blue-900 rounded-3xl py-5 px-12 min-h-[200px] max-w-[200px] flex justify-evenly items-center flex-col mt-16 max-xl:py-2 max-xl:px-6'>
