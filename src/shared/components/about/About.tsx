@@ -24,7 +24,7 @@ export const About = () => {
             <>
               Desenvolvedor Full Stack com experiência desde o inicio de 2022
               com projetos pessoais e comerciais. Sou apaixonado por tecnologia
-              sempre em busca em me propor a novos desafios e aprendizado no
+              sempre em busca de novos desafios e aprendizado para o meu
               desenvolvimento. A curiosidade sempre me mantém constantemente
               atualizado aprimorando ainda mais minhas habilidades. Me considero
               uma pessoa eficiente e ágil em aprender novas linguagens e

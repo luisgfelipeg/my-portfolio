@@ -6,7 +6,7 @@ import { AiFillGithub } from 'react-icons/ai';
 
 export const Intro = () => {
   return (
-    <section className='flex flex-col justify-center items-center'>
+    <section className='flex flex-col justify-evenly items-center'>
       <ReactTypingEffect
         text={['Bem vindo ao meu Portfólio', 'Eu sou o']}
         displayTextRenderer={(text) => {
@@ -28,11 +28,11 @@ export const Intro = () => {
       >
         Download CV
       </a>
-      <div className='flex justify-center overflow-hidden items-center bg-black border-custom w-80 h-80'>
+      <div className='flex justify-center overflow-hidden items-center bg-orange-400 border-custom w-56 h-56'>
         <img className='w-52 me' src={Me} alt='Minha foto' />
       </div>
 
-      <div className='flex justify-center items-center flex-col gap-4 text-sky-300 absolute left-60 bottom-96 after:w-[1px] after:h-10 after:bg-sky-300 max-2xl:left-40 max-xl:left-30 max-lg:left-20 max-md:left-10 max-sm:hidden'>
+      <div className='flex justify-center items-center flex-col gap-4 text-sky-300 absolute left-60 bottom-[450px] after:w-[1px] after:h-10 after:bg-sky-300 max-2xl:left-40 max-xl:left-30 max-lg:left-20 max-md:left-10 max-sm:hidden'>
         <a
           href='https://br.linkedin.com/in/luis-felipe-gongora-garcia'
           target='_blank'

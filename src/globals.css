@@ -53,9 +53,9 @@ body {
 }
 
 .me {
-  filter: drop-shadow(2px 1px 0 white) drop-shadow(-1px -1px 0 white);
+  filter: drop-shadow(3px 1px 0 white) drop-shadow(-3px -1px 0 white);
   position: relative;
-  top: 20px;
+  bottom: 25px;
   right: 3px;
 }
 
