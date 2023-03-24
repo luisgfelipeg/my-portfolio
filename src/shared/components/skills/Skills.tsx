@@ -78,7 +78,7 @@ export const Skills = () => {
                 initial='hidden'
                 whileInView='show'
                 viewport={{ once: true }}
-                variants={fadeIn('left', 'spring', 0.6, 2)}
+                variants={fadeIn('right', 'spring', 0.6, 2)}
               >
                 <Row icon={react} title='ReactJS' first />
               </motion.div>
@@ -86,7 +86,7 @@ export const Skills = () => {
                 initial='hidden'
                 whileInView='show'
                 viewport={{ once: true }}
-                variants={fadeIn('left', 'spring', 0.7, 2)}
+                variants={fadeIn('right', 'spring', 0.7, 2)}
               >
                 <Row icon={react} title='React Native' />
               </motion.div>
@@ -94,7 +94,7 @@ export const Skills = () => {
                 initial='hidden'
                 whileInView='show'
                 viewport={{ once: true }}
-                variants={fadeIn('left', 'spring', 0.8, 2)}
+                variants={fadeIn('right', 'spring', 0.8, 2)}
               >
                 <Row icon={tail} title='TailwindCSS' />
               </motion.div>
@@ -102,7 +102,7 @@ export const Skills = () => {
                 initial='hidden'
                 whileInView='show'
                 viewport={{ once: true }}
-                variants={fadeIn('left', 'spring', 0.9, 2)}
+                variants={fadeIn('right', 'spring', 0.9, 2)}
               >
                 <Row icon={boots} title='Bootstrap' />
               </motion.div>
@@ -114,7 +114,7 @@ export const Skills = () => {
           initial='hidden'
           whileInView='show'
           viewport={{ once: true, amount: 0.1 }}
-          variants={fadeIn('left', 'spring', 0.5, 1.5)}
+          variants={fadeIn('right', 'spring', 0.5, 1.5)}
           className='bg-blue-900 flex justify-evenly items-center flex-col px-16 py-8 max-md:px-10 rounded-3xl hover:bg-slate-900 hover:outline hover:outline-2 hover:outline-sky-300 duration-200'
         >
           <h2 className='text-sky-300 text-4xl font-bold'>Backend</h2>
@@ -150,7 +150,7 @@ export const Skills = () => {
                 initial='hidden'
                 whileInView='show'
                 viewport={{ once: true }}
-                variants={fadeIn('left', 'spring', 0.6, 2)}
+                variants={fadeIn('right', 'spring', 0.6, 2)}
               >
                 <Row icon={postgre} title='PostgreSQL' first />
               </motion.div>
@@ -158,7 +158,7 @@ export const Skills = () => {
                 initial='hidden'
                 whileInView='show'
                 viewport={{ once: true }}
-                variants={fadeIn('left', 'spring', 0.7, 2)}
+                variants={fadeIn('right', 'spring', 0.7, 2)}
               >
                 <Row icon={mongo} title='MongoDB' />
               </motion.div>
@@ -166,7 +166,7 @@ export const Skills = () => {
                 initial='hidden'
                 whileInView='show'
                 viewport={{ once: true }}
-                variants={fadeIn('left', 'spring', 0.8, 2)}
+                variants={fadeIn('right', 'spring', 0.8, 2)}
               >
                 <Row icon={firebase} title='Firebase' />
               </motion.div>
