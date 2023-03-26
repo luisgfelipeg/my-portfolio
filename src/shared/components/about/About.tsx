@@ -8,7 +8,7 @@ import mobile from '../../assets/images/mobile.png';
 
 export const About = () => {
   return (
-    <section className='flex justify-center flex-col items-center'>
+    <section className='flex justify-center flex-col items-center' id='about'>
       <h5 className='text-gray-400 font-bold text-sm'>Um pouco</h5>
       <h1 className='text-4xl font-bold text-sky-300'>Sobre mim!</h1>
       <div className='mt-20 max-xl:mt-10 flex justify-center gap-48 max-lg:flex-col max-lg:items-center max-lg:gap-10'>

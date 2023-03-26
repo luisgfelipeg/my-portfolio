@@ -18,7 +18,7 @@ import { Row } from './skills-row/Row';
 
 export const Skills = () => {
   return (
-    <section className='flex justify-center flex-col items-center'>
+    <section className='flex justify-center flex-col items-center' id='skills'>
       <motion.div
         variants={textVariant(0.25)}
         initial='hidden'

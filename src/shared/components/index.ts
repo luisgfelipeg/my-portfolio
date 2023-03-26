@@ -10,3 +10,4 @@ export * from './intro/Intro';
 export * from './about/About';
 export * from './skills/Skills';
 export * from './skills/skills-row/Row';
+export * from './footer/Footer';
