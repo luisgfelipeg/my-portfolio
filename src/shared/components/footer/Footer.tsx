@@ -10,8 +10,8 @@ interface FooterProps {
 export const Footer = ({ shortPage }: FooterProps) => {
   return (
     <footer
-      className={`bg-orange-400 py-12 flex justify-evenly flex-col items-center font-bold relative left-0 bottom-0 w-full ${
-        shortPage ? 'fixed bottom-0 w-full' : ''
+      className={`bg-orange-400 py-12 flex justify-evenly flex-col items-center font-bold left-0 bottom-0 w-full ${
+        shortPage ? 'fixed bottom-0 w-full' : 'relative'
       }`}
     >
       <Link to='/' className='mb-4'>
