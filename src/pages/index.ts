@@ -6,4 +6,3 @@ export * from './personal-projects/to-do-list/EditToDo';
 export * from './personal-projects/to-do-list/EditTasksToDo';
 export * from './personal-projects/to-do-list/TasksToDoList';
 export * from './personal-projects/binary-decimal-converter/BDC';
-export * from './personal-projects/churrascometro/Churrascometro';
