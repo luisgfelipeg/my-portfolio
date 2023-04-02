@@ -95,7 +95,7 @@ export function EditTasksToDo() {
           </div>
         </div>
       </LayoutBase>
-      <Footer />
+      <Footer shortPage />
     </>
   );
 }

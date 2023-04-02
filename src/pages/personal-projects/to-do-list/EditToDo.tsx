@@ -100,7 +100,7 @@ export function EditToDo() {
           </div>
         </div>
       </LayoutBase>
-      <Footer />
+      <Footer shortPage />
     </>
   );
 }

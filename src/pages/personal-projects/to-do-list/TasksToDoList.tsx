@@ -143,7 +143,7 @@ export function TasksToDoList() {
           </div>
         </div>
       </LayoutBase>
-      <Footer />
+      <Footer shortPage />
     </>
   );
 }

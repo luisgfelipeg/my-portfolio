@@ -151,7 +151,7 @@ export function ToDoList() {
           <ToastContainer style={{ top: '50px' }} />
         </div>
       </LayoutBase>
-      <Footer />
+      <Footer shortPage />
     </>
   );
 }
