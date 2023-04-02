@@ -22,7 +22,7 @@ export function BDC() {
   }
 
   return (
-    <>
+    <div className='relative min-h-screen'>
       <div className='flex flex-col justify-center items-center h-screen w-full m-auto'>
         <h1 className='text-xl text-sky-300'>
           Conversor de Binário para Decimal
@@ -62,6 +62,6 @@ export function BDC() {
         </form>
       </div>
       <Footer shortPage />
-    </>
+    </div>
   );
 }

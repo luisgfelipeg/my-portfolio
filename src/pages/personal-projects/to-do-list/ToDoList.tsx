@@ -72,7 +72,7 @@ export function ToDoList() {
   }, [update]);
 
   return (
-    <>
+    <div className='relative min-h-screen'>
       <LayoutBase>
         <div className='pt-24 flex flex-col'>
           <Modal
@@ -152,6 +152,6 @@ export function ToDoList() {
         </div>
       </LayoutBase>
       <Footer shortPage />
-    </>
+    </div>
   );
 }

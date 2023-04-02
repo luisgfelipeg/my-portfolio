@@ -43,7 +43,7 @@ export function EditTasksToDo() {
   );
 
   return (
-    <>
+    <div className='relative min-h-screen'>
       <LayoutBase>
         <div className='pt-24'>
           <div className={`flex flex-col`}>
@@ -96,6 +96,6 @@ export function EditTasksToDo() {
         </div>
       </LayoutBase>
       <Footer shortPage />
-    </>
+    </div>
   );
 }

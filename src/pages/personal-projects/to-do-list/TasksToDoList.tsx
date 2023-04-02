@@ -61,7 +61,7 @@ export function TasksToDoList() {
   }, [update]);
 
   return (
-    <>
+    <div className='relative min-h-screen'>
       <LayoutBase>
         <div className='pt-24'>
           <Modal
@@ -144,6 +144,6 @@ export function TasksToDoList() {
         </div>
       </LayoutBase>
       <Footer shortPage />
-    </>
+    </div>
   );
 }
