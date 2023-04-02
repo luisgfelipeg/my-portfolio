@@ -73,7 +73,7 @@ export function ToDoList() {
 
   return (
     <div className='relative min-h-screen flex flex-col'>
-      <LayoutBase>
+      <LayoutBase spreadFooter>
         <div className='pt-24 flex flex-col'>
           <Modal
             iNameToDo='Nome da Lista'
@@ -151,7 +151,7 @@ export function ToDoList() {
           <ToastContainer style={{ top: '50px' }} />
         </div>
       </LayoutBase>
-      <Footer shortPage />
+      <Footer />
     </div>
   );
 }

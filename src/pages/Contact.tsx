@@ -24,7 +24,7 @@ export default function Contact() {
   };
   return (
     <div className='relative min-h-screen flex flex-col'>
-      <LayoutBase>
+      <LayoutBase spreadFooter>
         <div className='flex justify-center items-center flex-col'>
           <h5 className='text-gray-400 font-bold text-sm'>Entre em</h5>
           <h1 className='text-4xl font-bold text-sky-300'>Contato</h1>

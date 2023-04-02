@@ -62,7 +62,7 @@ export function TasksToDoList() {
 
   return (
     <div className='relative min-h-screen flex flex-col'>
-      <LayoutBase>
+      <LayoutBase spreadFooter>
         <div className='pt-24'>
           <Modal
             list
@@ -143,7 +143,7 @@ export function TasksToDoList() {
           </div>
         </div>
       </LayoutBase>
-      <Footer shortPage />
+      <Footer />
     </div>
   );
 }

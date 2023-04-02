@@ -49,7 +49,7 @@ export function EditToDo() {
 
   return (
     <div className='relative min-h-screen flex flex-col'>
-      <LayoutBase>
+      <LayoutBase spreadFooter>
         <div className='pt-24'>
           <div className={`flex flex-col`}>
             <div className='flex justify-between items-center mx-60 py-3 max-2xl:mx-32 max-lg:mx-20 max-md:mx-10 max-sm:mx-2'>
@@ -100,7 +100,7 @@ export function EditToDo() {
           </div>
         </div>
       </LayoutBase>
-      <Footer shortPage />
+      <Footer />
     </div>
   );
 }
