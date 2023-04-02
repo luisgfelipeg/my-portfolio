@@ -23,7 +23,7 @@ export default function Contact() {
     e.target.reset();
   };
   return (
-    <>
+    <div className='relative min-h-screen flex flex-col'>
       <LayoutBase>
         <div className='flex justify-center items-center flex-col'>
           <h5 className='text-gray-400 font-bold text-sm'>Entre em</h5>
@@ -110,6 +110,6 @@ export default function Contact() {
         </div>
       </LayoutBase>
       <Footer />
-    </>
+    </div>
   );
 }

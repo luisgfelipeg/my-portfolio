@@ -48,7 +48,7 @@ export function EditToDo() {
   );
 
   return (
-    <div className='relative min-h-screen'>
+    <div className='relative min-h-screen flex flex-col'>
       <LayoutBase>
         <div className='pt-24'>
           <div className={`flex flex-col`}>
