@@ -11,7 +11,7 @@ export const Footer = ({ shortPage }: FooterProps) => {
   return (
     <footer
       className={`bg-orange-400 py-12 flex justify-evenly flex-col items-center font-bold ${
-        shortPage ? 'fixed bottom-0 w-full' : ''
+        shortPage ? 'absolute bottom-0 w-full' : ''
       }`}
     >
       <Link to='/' className='mb-4'>
