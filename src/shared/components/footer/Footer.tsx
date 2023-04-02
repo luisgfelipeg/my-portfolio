@@ -10,9 +10,7 @@ interface FooterProps {
 export const Footer = ({ shortPage }: FooterProps) => {
   return (
     <footer
-      className={`bg-orange-400 py-12 flex justify-evenly flex-col items-center font-bold ${
-        shortPage ? 'absolute bottom-0 w-full' : ''
-      }`}
+      className={`bg-orange-400 py-12 flex justify-evenly flex-col items-center font-bold relative left-0 bottom-0 w-full`}
     >
       <Link to='/' className='mb-4'>
         <img src={logo} alt='logo' width='50px' />
