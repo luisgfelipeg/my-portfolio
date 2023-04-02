@@ -3,9 +3,17 @@ import { SiLinkedin } from 'react-icons/si';
 import { AiFillGithub } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 
-export const Footer = () => {
+interface FooterProps {
+  shortPage?: boolean;
+}
+
+export const Footer = ({ shortPage }: FooterProps) => {
   return (
-    <footer className='bg-orange-400 py-12 flex justify-evenly flex-col items-center font-bold'>
+    <footer
+      className={`bg-orange-400 py-12 flex justify-evenly flex-col items-center font-bold ${
+        shortPage ? 'fixed bottom-0 w-full' : ''
+      }`}
+    >
       <Link to='/' className='mb-4'>
         <img src={logo} alt='logo' width='50px' />
       </Link>
